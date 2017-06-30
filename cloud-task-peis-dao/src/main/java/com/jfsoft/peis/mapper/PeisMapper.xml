@@ -47,4 +47,13 @@
         )}
     </select>
 
+    <!-- 调用存储过程，返回体检者信息 -->
+    <select id="getPerCheckinfoList" parameterType="java.util.Map" statementType="CALLABLE">
+        {call RPT_PER_CHECKINFO(
+            #{area_code,jdbcType=VARCHAR,mode=IN},
+            #{rowlimit,jdbcType=DECIMAL,mode=IN},
+            #{cur_arg_per,jdbcType=CURSOR,javaType=ResultSet, mode=OUT,resultMap=perCheckInfoList}
+        )}
+    </select>
+
 </mapper>

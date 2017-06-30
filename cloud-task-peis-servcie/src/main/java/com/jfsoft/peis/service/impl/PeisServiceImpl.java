@@ -1,9 +1,12 @@
 package com.jfsoft.peis.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.jfsoft.peis.entity.PerCheckinfo;
 import com.jfsoft.peis.entity.PerGroupitem;
+import com.jfsoft.peis.entity.TcPerCheckinfo;
 import com.jfsoft.peis.mapper.PeisMapper;
 import com.jfsoft.peis.service.IPeisService;
+import com.jfsoft.peis.service.IPeisStoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,33 +24,32 @@ public class PeisServiceImpl implements IPeisService {
     @Autowired
     private PeisMapper peisMapper;
 
-    public String getPerCheckInfoProc(String testno, String areacode) throws Exception {
+    @Autowired
+    private IPeisStoreService peisStoreService;
+
+    public String getPerCheckInfoProc(String areacode, String rowlimit) throws Exception {
 
         Map<String, Object> params = new HashMap<String, Object>();
-        params.put("testno", testno);
-        params.put("areacode", areacode);
+        params.put("area_code", areacode);
+        params.put("rowlimit", rowlimit);
         params.put("cur_arg_per", new ArrayList<PerCheckinfo>());
-        params.put("cur_arg_item", new ArrayList<PerGroupitem>());
-        //peisMapper.getPerCheckInfoProc(params);
-
-        Map<String, Object> params1 = new HashMap<String, Object>();
-        params1.put("areacode", areacode);
-        params1.put("usercode", "1");
-        peisMapper.getTestNo(params1);
-        Object obj = params1.get("testno");
-
-        String testno1 = null!=obj?obj.toString():"";
-        System.out.println("==============" + testno1);
-
+        peisMapper.getPerCheckinfoList(params);
 
         List<PerCheckinfo> perCheckinfoList = (List<PerCheckinfo>) params.get("cur_arg_per");
-        List<PerGroupitem> PerGroupitemList = (List<PerGroupitem>) params.get("cur_arg_item");
 
-        Map<String, Object> data = new HashMap<String, Object>();
-        data.put("perCheckinfo", perCheckinfoList);
-        data.put("PerGroupitemList", PerGroupitemList);
+        String state = "";
 
-        return testno1;
+        if(null!=perCheckinfoList && perCheckinfoList.size()>0) {
+            for(PerCheckinfo perCheckinfo : perCheckinfoList) {
+
+                //生成json
+                String perCheckinfoJson = JSON.toJSONString(perCheckinfo);
+                TcPerCheckinfo tcPerCheckinfo = JSON.parseObject(perCheckinfoJson, TcPerCheckinfo.class);
+                state = peisStoreService.peisSave(perCheckinfoJson);
+            }
+        }
+
+        return state;
     }
 
 }

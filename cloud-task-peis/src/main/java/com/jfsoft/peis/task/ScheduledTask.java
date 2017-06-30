@@ -5,6 +5,7 @@ import com.jfsoft.peis.service.IPeisStoreService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -22,13 +23,16 @@ public class ScheduledTask {
     @Autowired
     private IPeisStoreService peisStoreService;
 
-    @Scheduled(cron = "*/5 * * * * ?")
+    @Value("${task.procedure.rowlimit}")
+    private String rowlimit;
+
+    @Scheduled(cron = "${task.time}")
     public void execute() {
         System.out.println("现在时间是："+System.currentTimeMillis());
         try {
-            String testno = peisService.getPerCheckInfoProc("5009", "001");
-            System.out.println("---------体检号为--------" + testno);
-            peisStoreService.peisSave(testno);
+            String state = peisService.getPerCheckInfoProc("001", rowlimit);
+            System.out.println("---------数据上传状态为--------" + state);
+            //peisStoreService.peisSave(testno);
         } catch (Exception e) {
             e.printStackTrace();
         }

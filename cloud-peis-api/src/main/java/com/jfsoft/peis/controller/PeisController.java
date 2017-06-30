@@ -2,7 +2,6 @@ package com.jfsoft.peis.controller;
 
 import com.jfsoft.peis.entity.TcPerCheckinfo;
 import com.jfsoft.peis.service.IPeisService;
-import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -36,7 +35,7 @@ public class PeisController {
      * @return
      */
     @PostMapping(value = "/peisSave")
-    @ApiOperation(value="获取用户列表", notes="")
+
     public HttpEntity peisSave(@ModelAttribute TcPerCheckinfo tcPerCheckinfo){
         peisService.insertPeisPercheckinfo(tcPerCheckinfo);
         return new ResponseEntity<>(tcPerCheckinfo, HttpStatus.ACCEPTED);

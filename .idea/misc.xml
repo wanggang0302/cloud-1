@@ -3,6 +3,7 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/cloud-lis-api" />
     <file type="web" url="file://$PROJECT_DIR$/cloud-peis-api" />
+    <file type="web" url="file://$PROJECT_DIR$/cloud-task-peis" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -11,12 +12,12 @@
         <option value="$PROJECT_DIR$/cloud-peis-api/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-commonservice/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-component/pom.xml" />
-
         <option value="$PROJECT_DIR$/cloud-task/pom.xml" />
-
         <option value="$PROJECT_DIR$/cloud-lis/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-lis-api/pom.xml" />
-
+        <option value="$PROJECT_DIR$/cloud-task-peis/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-task-peis-dao/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-task-peis-servcie/pom.xml" />
       </list>
     </option>
   </component>

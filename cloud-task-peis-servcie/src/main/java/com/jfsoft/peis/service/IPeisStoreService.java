@@ -11,6 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface IPeisStoreService {
 
     @PostMapping(value = "/peisSave")
-    String peisSave(@RequestParam(value = "testno") String testno);
+    String peisSave(@RequestParam(value="info") String info);
 
 }
