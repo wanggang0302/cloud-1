@@ -16,6 +16,10 @@
       <module fileurl="file://$PROJECT_DIR$/cloud-peis-api/cloud-peis-api.iml" filepath="$PROJECT_DIR$/cloud-peis-api/cloud-peis-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-peis-dao/cloud-peis-dao.iml" filepath="$PROJECT_DIR$/cloud-peis-dao/cloud-peis-dao.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-peis-service/cloud-peis-service.iml" filepath="$PROJECT_DIR$/cloud-peis-service/cloud-peis-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-task/cloud-task.iml" filepath="$PROJECT_DIR$/cloud-task/cloud-task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-task-peis/cloud-task-peis.iml" filepath="$PROJECT_DIR$/cloud-task-peis/cloud-task-peis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-task-peis-dao/cloud-task-peis-dao.iml" filepath="$PROJECT_DIR$/cloud-task-peis-dao/cloud-task-peis-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-task-peis-servcie/cloud-task-peis-servcie.iml" filepath="$PROJECT_DIR$/cloud-task-peis-servcie/cloud-task-peis-servcie.iml" />
     </modules>
   </component>
 </project>

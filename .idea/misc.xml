@@ -11,8 +11,12 @@
         <option value="$PROJECT_DIR$/cloud-peis-api/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-commonservice/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-component/pom.xml" />
+
+        <option value="$PROJECT_DIR$/cloud-task/pom.xml" />
+
         <option value="$PROJECT_DIR$/cloud-lis/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-lis-api/pom.xml" />
+
       </list>
     </option>
   </component>

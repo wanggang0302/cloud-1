@@ -8,6 +8,7 @@
     <artifactId>cloud-component</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <description>组件项目</description>
     <modules>
         <module>../cloud-component-utils</module>
         <module>../cloud-component-swagger</module>

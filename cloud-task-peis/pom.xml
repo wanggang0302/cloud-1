@@ -2,46 +2,25 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <parent>
-        <artifactId>cloud-commonservice</artifactId>
+        <artifactId>cloud-task</artifactId>
         <groupId>com.jfsoft</groupId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../cloud-commonservice/pom.xml</relativePath>
+        <relativePath>../cloud-task/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud-commonservice-eureka</artifactId>
-    <packaging>jar</packaging>
+    <artifactId>cloud-task-peis</artifactId>
 
     <dependencies>
 
-        <!--eureka server -->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka-server</artifactId>
-        </dependency>
-
-        <!-- spring boot test-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <groupId>com.jfsoft</groupId>
+            <artifactId>cloud-task-peis-servcie</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
 
     </dependencies>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Dalston.RC1</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <build>
         <plugins>

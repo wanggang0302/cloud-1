@@ -15,22 +15,33 @@
         <module name="cloud-peis-api" />
         <module name="cloud-peis-dao" />
         <module name="cloud-peis-service" />
+        <module name="cloud-task-peis" />
+        <module name="cloud-task-peis-dao" />
+        <module name="cloud-task-peis-servcie" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="cloud-commonservice" target="1.6" />
+
+      <module name="cloud-commonservice" target="1.7" />
+      <module name="cloud-component" target="1.7" />
+      <module name="cloud-component-utils" target="1.7" />
       <module name="cloud-commonservice-eureka" target="1.8" />
-      <module name="cloud-component" target="1.6" />
+
       <module name="cloud-component-swagger" target="1.8" />
-      <module name="cloud-component-utils" target="1.6" />
+
       <module name="cloud-lis" target="1.8" />
       <module name="cloud-lis-api" target="1.8" />
       <module name="cloud-lis-dao" target="1.8" />
       <module name="cloud-lis-service" target="1.8" />
+
       <module name="cloud-peis" target="1.8" />
       <module name="cloud-peis-api" target="1.8" />
       <module name="cloud-peis-dao" target="1.8" />
       <module name="cloud-peis-service" target="1.8" />
+      <module name="cloud-task" target="1.8" />
+      <module name="cloud-task-peis" target="1.8" />
+      <module name="cloud-task-peis-dao" target="1.8" />
+      <module name="cloud-task-peis-servcie" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
