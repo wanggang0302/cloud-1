@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/cloud-commonservice/cloud-commonservice.iml" filepath="$PROJECT_DIR$/cloud-commonservice/cloud-commonservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-commonservice-eureka/cloud-commonservice-eureka.iml" filepath="$PROJECT_DIR$/cloud-commonservice-eureka/cloud-commonservice-eureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-component/cloud-component.iml" filepath="$PROJECT_DIR$/cloud-component/cloud-component.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-component-swagger/cloud-component-swagger.iml" filepath="$PROJECT_DIR$/cloud-component-swagger/cloud-component-swagger.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-component-utils/cloud-component-utils.iml" filepath="$PROJECT_DIR$/cloud-component-utils/cloud-component-utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-lis/cloud-lis.iml" filepath="$PROJECT_DIR$/cloud-lis/cloud-lis.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-lis-api/cloud-lis-api.iml" filepath="$PROJECT_DIR$/cloud-lis-api/cloud-lis-api.iml" />

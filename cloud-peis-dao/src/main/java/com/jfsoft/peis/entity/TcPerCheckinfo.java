@@ -228,6 +228,10 @@ public class TcPerCheckinfo {
     private String marriage;
 
     /**
+     * 全部信息
+     */
+    private String perinfo;
+    /**
      */
     private String reserve1;
 
@@ -609,6 +613,14 @@ public class TcPerCheckinfo {
 
     public void setReserve4(String reserve4) {
         this.reserve4 = reserve4 == null ? null : reserve4.trim();
+    }
+
+    public String getPerinfo() {
+        return perinfo;
+    }
+
+    public void setPerinfo(String perinfo) {
+        this.perinfo = perinfo;
     }
 
 }

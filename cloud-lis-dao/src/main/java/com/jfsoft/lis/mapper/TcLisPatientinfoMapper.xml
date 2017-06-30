@@ -179,6 +179,9 @@
 			<if test="reserve4 != null" >
 				reserve4,
 			</if>
+			<if test="perinfo != null" >
+				perinfo,
+			</if>
 		</trim>
 		<trim prefix="values (" suffix=")" suffixOverrides="," >
 			<if test="id != null" >
@@ -276,6 +279,9 @@
 			</if>
 			<if test="reserve4 != null" >
 				#{reserve4,jdbcType=VARCHAR},
+			</if>
+			<if test="perinfo != null" >
+				#{perinfo,jdbcType=LONGTEXT},
 			</if>
 		</trim>
 	</insert>
