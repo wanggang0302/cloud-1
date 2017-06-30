@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="cloud-commonservice-eureka" />
+        <module name="cloud-component-swagger" />
         <module name="cloud-component-utils" />
         <module name="cloud-lis-api" />
         <module name="cloud-lis-dao" />
@@ -25,6 +26,9 @@
       <module name="cloud-component" target="1.7" />
       <module name="cloud-component-utils" target="1.7" />
       <module name="cloud-commonservice-eureka" target="1.8" />
+
+      <module name="cloud-component-swagger" target="1.8" />
+
       <module name="cloud-lis" target="1.8" />
       <module name="cloud-lis-api" target="1.8" />
       <module name="cloud-lis-dao" target="1.8" />
