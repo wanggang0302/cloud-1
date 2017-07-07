@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/cloud.iml" filepath="$PROJECT_DIR$/cloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-commonservice/cloud-commonservice.iml" filepath="$PROJECT_DIR$/cloud-commonservice/cloud-commonservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-commonservice-eureka/cloud-commonservice-eureka.iml" filepath="$PROJECT_DIR$/cloud-commonservice-eureka/cloud-commonservice-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-component/cloud-component.iml" filepath="$PROJECT_DIR$/cloud-component/cloud-component.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-component-swagger/cloud-component-swagger.iml" filepath="$PROJECT_DIR$/cloud-component-swagger/cloud-component-swagger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-component-utils/cloud-component-utils.iml" filepath="$PROJECT_DIR$/cloud-component-utils/cloud-component-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-data/cloud-data.iml" filepath="$PROJECT_DIR$/cloud-data/cloud-data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-data-api/cloud-data-api.iml" filepath="$PROJECT_DIR$/cloud-data-api/cloud-data-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-data-dao/cloud-data-dao.iml" filepath="$PROJECT_DIR$/cloud-data-dao/cloud-data-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-data-service/cloud-data-service.iml" filepath="$PROJECT_DIR$/cloud-data-service/cloud-data-service.iml" />
+    </modules>
+  </component>
+</project>
