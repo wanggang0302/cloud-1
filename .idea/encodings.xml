@@ -3,24 +3,21 @@
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/cloud-commonservice" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-commonservice-eureka" charset="UTF-8" />
-
     <file url="file://$PROJECT_DIR$/cloud-component" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-component-swagger" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-component-utils" charset="UTF-8" />
-
     <file url="file://$PROJECT_DIR$/cloud-lis" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-lis-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-lis-dao" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-lis-service" charset="UTF-8" />
-
     <file url="file://$PROJECT_DIR$/cloud-peis" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-peis-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-peis-dao" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-peis-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-task" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-task-peis" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-task-peis-dao" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-task-peis-servcie" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-task-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-task-dao" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-task-service" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

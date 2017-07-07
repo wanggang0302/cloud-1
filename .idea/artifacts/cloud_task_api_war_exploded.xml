@@ -1,19 +1,16 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="cloud-task-peis:war exploded">
-    <output-path>$PROJECT_DIR$/cloud-task-peis/target/cloud-task-peis-1.0-SNAPSHOT</output-path>
+  <artifact type="exploded-war" name="cloud-task-api:war exploded">
+    <output-path>$PROJECT_DIR$/cloud-task-api/target/cloud-task-api-1.0-SNAPSHOT</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="cloud-task-api" />
         </element>
         <element id="directory" name="lib">
-          <element id="archive" name="cloud-task-peis-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="cloud-task-api" />
-          </element>
-          <element id="archive" name="cloud-task-peis-servcie-1.0-SNAPSHOT.jar">
+          <element id="archive" name="cloud-task-service-1.0-SNAPSHOT.jar">
             <element id="module-output" name="cloud-task-service" />
           </element>
-          <element id="archive" name="cloud-task-peis-dao-1.0-SNAPSHOT.jar">
+          <element id="archive" name="cloud-task-dao-1.0-SNAPSHOT.jar">
             <element id="module-output" name="cloud-task-dao" />
           </element>
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot:1.5.4.RELEASE" />
@@ -160,7 +157,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/cloud-task-api/target/cloud-task-peis-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/cloud-task-api/target/cloud-task-api-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="cloud-task-api/web/Web" />
     </root>

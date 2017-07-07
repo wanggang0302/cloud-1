@@ -6,18 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="cloud-commonservice-eureka" />
         <module name="cloud-component-swagger" />
         <module name="cloud-component-utils" />
-        <module name="cloud-lis-api" />
-        <module name="cloud-lis-dao" />
-        <module name="cloud-lis-service" />
-        <module name="cloud-peis-api" />
-        <module name="cloud-peis-dao" />
-        <module name="cloud-peis-service" />
+        <module name="cloud-task-api" />
+        <module name="cloud-task-dao" />
         <module name="cloud-task-peis" />
         <module name="cloud-task-peis-dao" />
         <module name="cloud-task-peis-servcie" />
+        <module name="cloud-task-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -35,9 +31,12 @@
       <module name="cloud-peis-dao" target="1.8" />
       <module name="cloud-peis-service" target="1.8" />
       <module name="cloud-task" target="1.8" />
+      <module name="cloud-task-api" target="1.8" />
+      <module name="cloud-task-dao" target="1.8" />
       <module name="cloud-task-peis" target="1.8" />
       <module name="cloud-task-peis-dao" target="1.8" />
       <module name="cloud-task-peis-servcie" target="1.8" />
+      <module name="cloud-task-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

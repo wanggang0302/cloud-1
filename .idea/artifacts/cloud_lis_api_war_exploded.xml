@@ -98,12 +98,6 @@
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-jdbc:8.5.15" />
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-juli:8.5.15" />
           <element id="library" level="project" name="Maven: com.alibaba:druid:1.0.25" />
-          <element id="archive" name="cloud-lis-service-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="cloud-lis-service" />
-          </element>
-          <element id="archive" name="cloud-lis-dao-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="cloud-lis-dao" />
-          </element>
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-web:1.5.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter:1.5.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot:1.5.4.RELEASE" />

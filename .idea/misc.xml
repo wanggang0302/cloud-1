@@ -3,22 +3,35 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/cloud-lis-api" />
     <file type="web" url="file://$PROJECT_DIR$/cloud-peis-api" />
-    <file type="web" url="file://$PROJECT_DIR$/cloud-task-peis" />
+    <file type="web" url="file://$PROJECT_DIR$/cloud-task-api" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/cloud-peis/pom.xml" />
-        <option value="$PROJECT_DIR$/cloud-peis-api/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-commonservice/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-component/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-task/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-lis/pom.xml" />
-        <option value="$PROJECT_DIR$/cloud-lis-api/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-task-peis/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-task-peis-dao/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-task-peis-servcie/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/cloud-commonservice-eureka/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-commonservice/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-lis-api/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-lis-dao/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-lis-service/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-lis/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-peis-api/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-peis-dao/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-peis-service/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-peis/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-task-servcie/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">

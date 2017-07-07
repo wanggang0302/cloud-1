@@ -95,12 +95,6 @@
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.25" />
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-jdbc:8.5.15" />
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-juli:8.5.15" />
-          <element id="archive" name="cloud-peis-service-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="cloud-peis-service" />
-          </element>
-          <element id="archive" name="cloud-peis-dao-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="cloud-peis-dao" />
-          </element>
           <element id="library" level="project" name="Maven: org.springframework.cloud:spring-cloud-netflix-eureka-client:1.3.1.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.cloud:spring-cloud-netflix-core:1.3.1.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot:1.5.4.RELEASE" />
