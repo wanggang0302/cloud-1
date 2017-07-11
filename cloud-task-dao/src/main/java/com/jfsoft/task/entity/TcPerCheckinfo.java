@@ -60,7 +60,7 @@ public class TcPerCheckinfo {
     /**
      * 年龄单位
      */
-    private String ageunit;
+    private String ageunitcode;
 
     /**
      * 出生日期
@@ -95,7 +95,7 @@ public class TcPerCheckinfo {
     /**
      * 会员卡号
      */
-    private Integer cardnum;
+    private String cardnum;
 
     /**
      * 医院就诊卡号
@@ -228,6 +228,11 @@ public class TcPerCheckinfo {
     private String marriage;
 
     /**
+     * 报告单路径
+     */
+    private String filePath;
+
+    /**
      * 全部信息
      */
     private String perinfo;
@@ -311,14 +316,6 @@ public class TcPerCheckinfo {
         this.age = age;
     }
 
-    public String getAgeunit() {
-        return ageunit;
-    }
-
-    public void setAgeunit(String ageunit) {
-        this.ageunit = ageunit == null ? null : ageunit.trim();
-    }
-
     public Date getBirthday() {
         return birthday;
     }
@@ -367,11 +364,11 @@ public class TcPerCheckinfo {
         this.testcount = testcount;
     }
 
-    public Integer getCardnum() {
+    public String getCardnum() {
         return cardnum;
     }
 
-    public void setCardnum(Integer cardnum) {
+    public void setCardnum(String cardnum) {
         this.cardnum = cardnum;
     }
 
@@ -621,6 +618,22 @@ public class TcPerCheckinfo {
 
     public void setPerinfo(String perinfo) {
         this.perinfo = perinfo;
+    }
+
+    public String getAgeunitcode() {
+        return ageunitcode;
+    }
+
+    public void setAgeunitcode(String ageunitcode) {
+        this.ageunitcode = ageunitcode;
+    }
+
+    public String getFilePath() {
+        return filePath;
+    }
+
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
     }
 
 }

@@ -10,9 +10,9 @@
     <version>1.0-SNAPSHOT</version>
     <description>Spring定时任务</description>
     <modules>
-        <module>../cloud-task-api</module>
-        <module>../cloud-task-service</module>
         <module>../cloud-task-dao</module>
+        <module>../cloud-task-service</module>
+        <module>../cloud-task-api</module>
     </modules>
 
     <parent>
@@ -93,7 +93,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.4</version>
+            <version>1.2.15</version>
         </dependency>
 
         <dependency>
@@ -128,6 +128,11 @@
             <groupId>io.github.openfeign.form</groupId>
             <artifactId>feign-form-spring</artifactId>
             <version>2.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>4.3.9.RELEASE</version>
         </dependency>
 
     </dependencies>

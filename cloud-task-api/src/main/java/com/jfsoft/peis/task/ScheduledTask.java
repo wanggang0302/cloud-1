@@ -1,20 +1,18 @@
 package com.jfsoft.peis.task;
 
-import com.jfsoft.task.entity.TcLisPatientinfo;
+import com.jfsoft.utils.Constants;
+import com.jfsoft.log.service.ITcLogService;
+import com.jfsoft.task.entity.TcLog;
 import com.jfsoft.task.service.ITaskService;
 import com.jfsoft.task.service.ICloudFeignClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Date;
 
 /**
  * Created by web on 2017/6/29.
@@ -28,41 +26,48 @@ public class ScheduledTask {
     private ITaskService taskService;
 
     @Autowired
-    private ICloudFeignClient cloudFeignClient;
+    private ITcLogService tcLogService;
 
     @Autowired
-    private TcLisPatientinfo tcLisPatientinfo;
+    private ICloudFeignClient cloudFeignClient;
 
+    //每次上传条数
     @Value("${task.procedure.rowlimit}")
     private String rowlimit;
 
+    //上传类型  lis或者peis
     @Value("${up.type}")
     private String type;
 
+    //图片本地路径
+    @Value("${local.filedir}")
+    private String localFileDir;
+
     @Scheduled(cron = "${task.time}")
     public void execute() {
-        System.out.println("现在时间是："+System.currentTimeMillis());
+        logger.debug("现在时间是："+System.currentTimeMillis());
         try {
-            if(type.equals("peis")){
-                String state = taskService.getPerCheckInfoProc("001", rowlimit);
-                System.out.println("---------数据上传状态为--------" + state);
+
+            TcLog tcLog = new TcLog();
+            tcLog.setUpDate(new Date());
+
+            //上传状态
+            String status = "";
+
+            if(type.equals("peis")) {
+                status = taskService.getPerCheckInfoProc("001", localFileDir, rowlimit);
+                tcLog.setUpType(Constants.UploadType.PEIS.toString());
             }else if(type.equals("lis")){
-                System.out.println("peis服务启动");
-                //从LIS表中获取filepath
-                String filepath = "E:/images/a.jpg";
-                //获取本地图片流，上传
-                FileInputStream fs =new FileInputStream(filepath);
-                //获取文件名
-                File file = new File(filepath);
-                String picName = file.getName();
-                MockMultipartFile pic = new MockMultipartFile("file",picName,"",fs);
-                Map<String, Object> map = new HashMap<String, Object>();
-                map = cloudFeignClient.uploadPic(pic);
-                String filePath = (String) map.get("filePath");
-                //重新组装检验信息，更新filePath字段
-                tcLisPatientinfo.setFilepath(filepath);
-                //调用lisSave接口，发送重新组装的消息
+                logger.info("lis服务启动");
+                status = taskService.getLisPatientInfoProc("001",rowlimit);
+                tcLog.setUpType(Constants.UploadType.LIS.toString());
             }
+
+            logger.info("---------数据上传状态为--------" + status);
+            tcLog.setUpStatus(Short.parseShort(status));
+
+            //保存日志
+            tcLogService.save(tcLog);
         } catch (Exception e) {
             e.printStackTrace();
         }

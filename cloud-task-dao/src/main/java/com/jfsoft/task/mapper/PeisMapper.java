@@ -1,8 +1,6 @@
 package com.jfsoft.task.mapper;
 
-
-
-import com.jfsoft.task.entity.PerCheckinfo;
+import com.jfsoft.task.entity.TcPerCheckinfo;
 
 import java.util.List;
 import java.util.Map;
@@ -19,7 +17,7 @@ public interface PeisMapper {
      * @param params
      * @return
      */
-    List<PerCheckinfo> getPerCheckInfoProc(Map<String, Object> params);
+    List<TcPerCheckinfo> getPerCheckInfoProc(Map<String, Object> params);
 
     /**
      * 获得体检号

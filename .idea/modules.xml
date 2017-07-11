@@ -7,9 +7,10 @@
       <module fileurl="file://$PROJECT_DIR$/cloud-component-swagger/cloud-component-swagger.iml" filepath="$PROJECT_DIR$/cloud-component-swagger/cloud-component-swagger.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-component-utils/cloud-component-utils.iml" filepath="$PROJECT_DIR$/cloud-component-utils/cloud-component-utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-task/cloud-task.iml" filepath="$PROJECT_DIR$/cloud-task/cloud-task.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cloud-task-api/cloud-task-peis.iml" filepath="$PROJECT_DIR$/cloud-task-api/cloud-task-peis.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cloud-task-dao/cloud-task-peis-dao.iml" filepath="$PROJECT_DIR$/cloud-task-dao/cloud-task-peis-dao.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cloud-task-service/cloud-task-servcie.iml" filepath="$PROJECT_DIR$/cloud-task-service/cloud-task-servcie.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-task-api/cloud-task-api.iml" filepath="$PROJECT_DIR$/cloud-task-api/cloud-task-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-task-dao/cloud-task-dao.iml" filepath="$PROJECT_DIR$/cloud-task-dao/cloud-task-dao.iml" />
+      <module fileurl="file://D:\IdeaProjects\0629\cloud\cloud-task-api\cloud-task-peis.iml" filepath="D:\IdeaProjects\0629\cloud\cloud-task-api\cloud-task-peis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-task-service/cloud-task-service.iml" filepath="$PROJECT_DIR$/cloud-task-service/cloud-task-service.iml" />
     </modules>
   </component>
 </project>

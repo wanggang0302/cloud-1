@@ -37,6 +37,7 @@
       <module name="cloud-task-peis-dao" target="1.8" />
       <module name="cloud-task-peis-servcie" target="1.8" />
       <module name="cloud-task-service" target="1.8" />
+      <module name="demo" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
