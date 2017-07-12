@@ -1,5 +1,8 @@
 package com.jfsoft.utils;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -8,9 +11,6 @@ import java.util.zip.CRC32;
 import java.util.zip.CheckedOutputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * wanggang
@@ -41,7 +41,7 @@ public class ZipCompressor {
         }
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(zipFile);
-            CheckedOutputStream cos = new CheckedOutputStream(fileOutputStream,new CRC32());
+            CheckedOutputStream cos = new CheckedOutputStream(fileOutputStream, new CRC32());
             ZipOutputStream out = new ZipOutputStream(cos);
             String basedir = "";
             compressByType(file, out, basedir);

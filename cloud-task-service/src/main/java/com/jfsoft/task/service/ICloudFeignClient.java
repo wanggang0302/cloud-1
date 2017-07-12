@@ -10,7 +10,9 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.Map;
 
 /**
- * Created by web on 2017/6/30.
+ * 上传到云平台
+ * wanggang
+ * 2017-7-12 14:36:37
  */
 @FeignClient(name = "service-cloud",configuration = FeignMultipartSupportConfig.class)
 public interface ICloudFeignClient {

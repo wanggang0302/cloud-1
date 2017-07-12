@@ -37,7 +37,6 @@ public class Application {
         fastConverter.setFastJsonConfig(fastJsonConfig);
         HttpMessageConverter<?> converter = fastConverter;
         return new HttpMessageConverters(converter);
-
     }
 
     public static void main(String[] args) {

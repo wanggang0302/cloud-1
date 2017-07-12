@@ -20,6 +20,11 @@
             <artifactId>cloud-task-service</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.jfsoft</groupId>
+            <artifactId>cloud-task-dao</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>

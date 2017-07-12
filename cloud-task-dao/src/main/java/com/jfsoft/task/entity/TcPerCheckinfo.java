@@ -233,6 +233,11 @@ public class TcPerCheckinfo {
     private String filePath;
 
     /**
+     * 总检时间(显示在微信报告单上)
+     */
+    private Date totalTime;
+
+    /**
      * 全部信息
      */
     private String perinfo;
@@ -634,6 +639,14 @@ public class TcPerCheckinfo {
 
     public void setFilePath(String filePath) {
         this.filePath = filePath;
+    }
+
+    public Date getTotalTime() {
+        return totalTime;
+    }
+
+    public void setTotalTime(Date totalTime) {
+        this.totalTime = totalTime;
     }
 
 }

@@ -14,24 +14,6 @@
         <result column="areacode" property="areacode" />
     </resultMap>
 
-    <!-- 根据存储过程查询体检者信息 -->
-    <select id="getPerCheckInfoProc" parameterType="java.util.Map" statementType="CALLABLE">
-        {call rpt_barcode(
-        #{testno,jdbcType=VARCHAR,mode=IN},
-        #{areacode,jdbcType=VARCHAR,mode=IN},
-        #{cur_arg_per,jdbcType=CURSOR,javaType=ResultSet, mode=OUT,resultMap=perCheckInfoList}
-        )}
-    </select>
-
-    <!-- 调用生成TestNo的存储过程 -->
-    <select id="getTestNo" parameterType="java.util.Map" statementType="CALLABLE">
-        {call mdl_testno(
-        #{areacode,jdbcType=VARCHAR,mode=IN},
-        #{usercode,jdbcType=VARCHAR,mode=IN},
-        #{testno,jdbcType=VARCHAR,mode=OUT}
-        )}
-    </select>
-
     <!-- 调用存储过程，返回体检者信息 -->
     <select id="getPerCheckinfoList" parameterType="java.util.Map" statementType="CALLABLE">
         {call RPT_PER_CHECKINFO(
@@ -40,11 +22,5 @@
             #{cur_arg_per,jdbcType=CURSOR,javaType=ResultSet, mode=OUT,resultMap=perCheckInfoList}
         )}
     </select>
-    <insert id="saveTag_Id" parameterType="java.lang.String" statementType="CALLABLE">
-
-        insert into test_tag(id,tagid) values (sys_guid(), #{testno})
-
-
-    </insert>
 
 </mapper>

@@ -122,6 +122,11 @@ public class TcLisPatientinfo {
     private String checkopt;
 
     /**
+     * 审核时间(显示在微信报告单上)
+     */
+    private Date checkTime;
+
+    /**
      * 检查时间
      */
     private Date checkdate;
@@ -465,4 +470,13 @@ public class TcLisPatientinfo {
     public void setPic(String pic) {
         this.pic = pic;
     }
+
+    public Date getCheckTime() {
+        return checkTime;
+    }
+
+    public void setCheckTime(Date checkTime) {
+        this.checkTime = checkTime;
+    }
+
 }

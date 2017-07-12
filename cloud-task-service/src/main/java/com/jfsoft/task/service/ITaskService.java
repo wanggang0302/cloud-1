@@ -16,7 +16,7 @@ public interface ITaskService {
      * @return
      * @throws Exception
      */
-    public String getPerCheckInfoProc(String areacode, String localFileDir, String rowlimit) throws Exception;
+    public String getPerCheckInfoProc(String areacode, String rowlimit) throws Exception;
 
     /**
      * 调用存储过程，返回用户信息

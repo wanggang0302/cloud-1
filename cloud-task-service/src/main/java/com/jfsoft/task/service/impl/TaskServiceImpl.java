@@ -8,6 +8,7 @@ import com.jfsoft.task.mapper.PeisMapper;
 import com.jfsoft.task.service.ICloudFeignClient;
 import com.jfsoft.task.service.ITaskService;
 import com.jfsoft.utils.ZipCompressor;
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,13 +42,13 @@ public class TaskServiceImpl implements ITaskService {
     @Autowired
     private ICloudFeignClient cloudFeignClient;
 
-    public String getPerCheckInfoProc(String areacode, String localFileDir, String rowlimit) throws Exception {
+    public String getPerCheckInfoProc(String areacode, String rowlimit) throws Exception {
 
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("area_code", areacode);
         params.put("rowlimit", rowlimit);
         params.put("cur_arg_per", new ArrayList<TcPerCheckinfo>());
-        peisMapper.getPerCheckinfoList(params);
+        peisMapper.getPerCheckInfoProc(params);
 
         List<TcPerCheckinfo> perCheckinfoList = (List<TcPerCheckinfo>) params.get("cur_arg_per");
 
@@ -56,40 +57,52 @@ public class TaskServiceImpl implements ITaskService {
         if(null!=perCheckinfoList && perCheckinfoList.size()>0) {
             for(TcPerCheckinfo tcPerCheckinfo : perCheckinfoList) {
 
-                //获得需要压缩的图片路径
-                String filePath = tcPerCheckinfo.getFilePath();
-                //生成的zip文件路径
-                StringBuilder zipFileNameSb = new StringBuilder(localFileDir);
-                zipFileNameSb.append(areacode).append("_");
-                zipFileNameSb.append(tcPerCheckinfo.getTestno()).append(".zip");
-
-                String zipFileName = zipFileNameSb.toString();
-
-                //压缩到zip
-                ZipCompressor zc = new ZipCompressor(zipFileName);
-                zc.compressExe(filePath);
-
                 //获取本地zip流，上传
-                FileInputStream fs =new FileInputStream(zipFileName);
+                FileInputStream fs = null;
 
-                //获取文件名
-                File file = new File(zipFileName);
-                String picName = file.getName();
+                //zip文件地址
+                String zipFileName = "";
 
-                MockMultipartFile pic = new MockMultipartFile("file",picName,"",fs);
-                Map<String, Object> map = new HashMap<String, Object>();
-                //上传
-                map = cloudFeignClient.uploadPic(pic);
-                //获取云端图片的路径
-                String cloudFilePath = (String) map.get("filePath");
-                //重新组装检验信息，更新filePath字段
-                tcPerCheckinfo.setFilePath(cloudFilePath);
+                try {
+                    //获得需要压缩的图片路径
+                    String filePath = tcPerCheckinfo.getFilePath();
+                    //生成zip文件到图片路径下
+                    StringBuilder zipFileNameSb = new StringBuilder("");
+                    zipFileNameSb.append(filePath).append("/");
+                    zipFileNameSb.append(areacode).append("_");
+                    zipFileNameSb.append(tcPerCheckinfo.getTestno()).append(".zip");
 
-                String perCheckinfoJson = JSON.toJSONString(tcPerCheckinfo);
-                state = cloudFeignClient.peisSave(perCheckinfoJson);
-                if(state.equals("OK")){
-                    String testno = tcPerCheckinfo.getTestno();
-                    peisMapper.saveTag_Id(testno);
+                    zipFileName = zipFileNameSb.toString();
+
+                    //压缩到zip
+                    ZipCompressor zc = new ZipCompressor(zipFileName);
+                    zc.compressExe(filePath);
+
+                    //获取本地zip流，上传
+                    fs = new FileInputStream(zipFileName);
+
+                    //获取文件名
+                    File file = new File(zipFileName);
+                    String picName = file.getName();
+
+                    //上传
+                    MockMultipartFile pic = new MockMultipartFile("file", picName, "", fs);
+                    Map<String, Object> map = cloudFeignClient.uploadPic(pic);
+                    //获取云端图片的路径
+                    String cloudFilePath = (String) map.get("filePath");
+                    //重新组装检验信息，更新filePath字段
+                    tcPerCheckinfo.setFilePath(cloudFilePath);
+
+                    String perCheckinfoJson = JSON.toJSONString(tcPerCheckinfo);
+                    state = cloudFeignClient.peisSave(perCheckinfoJson);
+                } catch (Exception e) {
+                    logger.error("上传PEIS信息出错，error is {}。", e.getMessage());
+                } finally {
+                    if(null!=fs) fs.close();
+                    File zipFile = new File(zipFileName);
+                    if(null!=zipFile) {
+                        zipFile.delete();
+                    }
                 }
             }
         }
@@ -103,8 +116,10 @@ public class TaskServiceImpl implements ITaskService {
         params.put("area_code", areacode);
         params.put("rowlimit", rowlimit);
         params.put("cur_arg_per", new ArrayList<TcPerCheckinfo>());
-        lisMpper.getLisPatientInfoList(params);
+        lisMpper.getLisPatInfoList(params);
+
         List<TcLisPatientinfo> lisPatientinfoList = (List<TcLisPatientinfo>) params.get("cur_arg_per");
+
         String state = "";
         if(null!=lisPatientinfoList && lisPatientinfoList.size()>0){
             for(TcLisPatientinfo lisPatientinfo : lisPatientinfoList){

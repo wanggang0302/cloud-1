@@ -23,6 +23,7 @@ public class TcLogServiceImpl implements ITcLogService {
     @Autowired
     private TcLogMapper tcLogMapper;
 
+    @TargetDataSource(name="mysql")
     public void save(TcLog tcLog) throws Exception {
 
         tcLogMapper.insert(tcLog);

@@ -7,6 +7,16 @@ package com.jfsoft.utils;
  */
 public class Constants {
 
+    /** 是否使用：是 */
+    public static final String IS_USE_TRUE = "1";
+    public static final String IS_USE_FALSE = "0";
+    /** 是否使用：全部 */
+    public static final String IS_USE_ALL = "2";
+
+    /** 是否删除：是 */
+    public static final String IS_DELETE_TRUE = "1";
+    public static final String IS_DELETE_FALSE = "0";
+
     /**
      * 上传状态
      * 1 SUCCESS
