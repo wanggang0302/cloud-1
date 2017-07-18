@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -21,6 +22,7 @@ import java.util.Date;
  * 2017-7-12 10:59:53
  */
 @Component
+@PropertySource(value = {"classpath:application.properties"}, encoding="utf-8")
 public class ScheduledTask {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());

@@ -25,4 +25,5 @@ public interface ICloudFeignClient {
 
     @PostMapping(value = "/cloud/uploadPic", produces = {MediaType.APPLICATION_JSON_UTF8_VALUE}, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     Map<String,Object> uploadPic(@RequestPart MultipartFile file);
+
 }

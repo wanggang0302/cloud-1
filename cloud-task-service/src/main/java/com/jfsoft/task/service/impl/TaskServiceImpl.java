@@ -1,26 +1,26 @@
 package com.jfsoft.task.service.impl;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.jfsoft.task.entity.TcLisPatientinfo;
 import com.jfsoft.task.entity.TcPerCheckinfo;
 import com.jfsoft.task.mapper.LisMapper;
 import com.jfsoft.task.mapper.PeisMapper;
 import com.jfsoft.task.service.ICloudFeignClient;
 import com.jfsoft.task.service.ITaskService;
+import com.jfsoft.task.service.IWxFeignClient;
 import com.jfsoft.utils.ZipCompressor;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 定时任务业务实现类
@@ -42,13 +42,19 @@ public class TaskServiceImpl implements ITaskService {
     @Autowired
     private ICloudFeignClient cloudFeignClient;
 
+    @Autowired
+    private IWxFeignClient wxFeignClient;
+
+    @Value("${spring.application.name}")
+    private String hospitalId;
+
     public String getPerCheckInfoProc(String areacode, String rowlimit) throws Exception {
 
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("area_code", areacode);
         params.put("rowlimit", rowlimit);
         params.put("cur_arg_per", new ArrayList<TcPerCheckinfo>());
-        peisMapper.getPerCheckInfoProc(params);
+        peisMapper.getPerCheckinfoList(params);
 
         List<TcPerCheckinfo> perCheckinfoList = (List<TcPerCheckinfo>) params.get("cur_arg_per");
 
@@ -94,7 +100,21 @@ public class TaskServiceImpl implements ITaskService {
                     tcPerCheckinfo.setFilePath(cloudFilePath);
 
                     String perCheckinfoJson = JSON.toJSONString(tcPerCheckinfo);
+
                     state = cloudFeignClient.peisSave(perCheckinfoJson);
+
+                    String name = tcPerCheckinfo.getName();
+                    Date date = tcPerCheckinfo.getTotalTime();
+                    String tel = tcPerCheckinfo.getTel();
+
+                    JSONObject jsonObject = new JSONObject();
+                    jsonObject.put("hospitalId", hospitalId);
+                    jsonObject.put("tel", tel);
+                    jsonObject.put("name", name);
+                    jsonObject.put("date", date);
+                    jsonObject.put("itemValue", "体检报告单");
+                    wxFeignClient.push(jsonObject.toJSONString());
+
                 } catch (Exception e) {
                     logger.error("上传PEIS信息出错，error is {}。", e.getMessage());
                 } finally {
@@ -152,6 +172,20 @@ public class TaskServiceImpl implements ITaskService {
                     String testno = tcPerCheckinfo.getTestno();
                     peisMapper.saveTag_Id(testno);
                 }*/
+
+                String name = lisPatientinfo.getName();
+                String feeName = lisPatientinfo.getFeename();
+                Date date = lisPatientinfo.getTestdate();
+                String tel = lisPatientinfo.getTel();
+
+                //发送模板消息
+                JSONObject jsonObject = new JSONObject();
+                jsonObject.put("hospitalId", hospitalId);
+                jsonObject.put("tel", tel);
+                jsonObject.put("name", name);
+                jsonObject.put("date", date);
+                jsonObject.put("itemValue", feeName + "报告单");
+                wxFeignClient.push(jsonObject.toJSONString());
             }
         }
 

@@ -19,6 +19,6 @@ public interface PeisMapper {
      * @param params
      * @return
      */
-    List<TcPerCheckinfo> getPerCheckInfoProc(Map<String, Object> params);
+    List<TcPerCheckinfo> getPerCheckinfoList(Map<String, Object> params);
 
 }
