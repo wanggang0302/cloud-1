@@ -17,6 +17,9 @@ public class Constants {
     public static final String IS_DELETE_TRUE = "1";
     public static final String IS_DELETE_FALSE = "0";
 
+    /** 文件类型 */
+    public static final String FILE_TYPE_ZIP = ".zip";
+
     /**
      * 上传状态
      * 1 SUCCESS
@@ -51,15 +54,15 @@ public class Constants {
 
     /**
      * 上传类型（LIS、PEIS、通用类消息）
-     * 1 LIS
-     * 2 PEIS
-     * 3 通用类消息
+     * 10 LIS
+     * 20 PEIS
+     * 30 通用类消息
      */
     public enum UploadType {
 
-        LIS("1", "LIS"),
-        PEIS("2", "PEIS"),
-        USUAL("3", "通用类消息");
+        LIS("10", "LIS"),
+        PEIS("20", "PEIS"),
+        USUAL("30", "通用类消息");
 
         private String value;
         private String name;

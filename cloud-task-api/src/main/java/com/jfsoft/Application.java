@@ -28,16 +28,16 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Import({DynamicDataSourceRegister.class}) // 注册动态多数据源
 public class Application {
 
-    @Bean
-    public HttpMessageConverters fastJsonHttpMessageConverters()
-    {
-        FastJsonHttpMessageConverter fastConverter = new FastJsonHttpMessageConverter();
-        FastJsonConfig fastJsonConfig =new FastJsonConfig();
-        fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat);
-        fastConverter.setFastJsonConfig(fastJsonConfig);
-        HttpMessageConverter<?> converter = fastConverter;
-        return new HttpMessageConverters(converter);
-    }
+    //@Bean
+    //public HttpMessageConverters fastJsonHttpMessageConverters()
+    //{
+    //    FastJsonHttpMessageConverter fastConverter = new FastJsonHttpMessageConverter();
+    //    FastJsonConfig fastJsonConfig =new FastJsonConfig();
+    //    fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat);
+    //    fastConverter.setFastJsonConfig(fastJsonConfig);
+    //    HttpMessageConverter<?> converter = fastConverter;
+    //    return new HttpMessageConverters(converter);
+    //}
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class);

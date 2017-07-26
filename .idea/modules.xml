@@ -9,7 +9,6 @@
       <module fileurl="file://$PROJECT_DIR$/cloud-task/cloud-task.iml" filepath="$PROJECT_DIR$/cloud-task/cloud-task.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-task-api/cloud-task-api.iml" filepath="$PROJECT_DIR$/cloud-task-api/cloud-task-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-task-dao/cloud-task-dao.iml" filepath="$PROJECT_DIR$/cloud-task-dao/cloud-task-dao.iml" />
-      <module fileurl="file://D:\IdeaProjects\0629\cloud\cloud-task-api\cloud-task-peis.iml" filepath="D:\IdeaProjects\0629\cloud\cloud-task-api\cloud-task-peis.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-task-service/cloud-task-service.iml" filepath="$PROJECT_DIR$/cloud-task-service/cloud-task-service.iml" />
     </modules>
   </component>

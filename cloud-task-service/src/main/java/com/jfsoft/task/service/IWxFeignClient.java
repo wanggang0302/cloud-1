@@ -1,8 +1,11 @@
 package com.jfsoft.task.service;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * 微信客户端
@@ -12,7 +15,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(name = "push-msg",configuration = FeignMultipartSupportConfig.class)
 public interface IWxFeignClient {
 
-    @PostMapping(value = "/push")
-    String push(@RequestParam(value="info") String info);
+    /**
+     * 上传报告单数据到微信，并发送微信模板消息
+     * ChenXC
+     * @param info
+     * @param file
+     * @return
+     */
+    @PostMapping(value = "/push", produces = {MediaType.APPLICATION_JSON_UTF8_VALUE}, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    String push(@RequestParam(value="info") String info, @RequestPart MultipartFile file);
 
 }

@@ -49,40 +49,49 @@ public class ScheduledTask {
     private String hospitalCode;
 
     //医院名称
-    @Value("${hospital.name}")
-    private String hospitalName;
+    //@Value("${hospital.name}")
+    //private String hospitalName;
 
     @Scheduled(cron = "${task.time}")
     public void execute() {
-        logger.debug("现在时间是："+System.currentTimeMillis());
+
+        long beginProcess = System.currentTimeMillis();
+        logger.debug("Start processing msg , type is :" + type + ".");
+
         try {
+            taskService.processData(type);
+            //TcLog tcLog = new TcLog();
+            //tcLog.setUpDate(new Date());
+            //
+            ////上传状态
+            //String status = "";
 
-            TcLog tcLog = new TcLog();
-            tcLog.setUpDate(new Date());
+            //if(type.equalsIgnoreCase(Constants.UploadType.PEIS.getValue())) {
+            //    logger.info("peis服务启动");
+            //    status = taskService.getPerCheckInfoProc("001", rowlimit);
+            //    tcLog.setUpType(Constants.UploadType.PEIS.getValue());
+            //} else if(type.equalsIgnoreCase(Constants.UploadType.PEIS.getValue())) {
+            //    logger.info("lis服务启动");
+            //    status = taskService.getLisPatientInfoProc("001",rowlimit);
+            //    tcLog.setUpType(Constants.UploadType.LIS.getValue());
+            //} else {
+            //    logger.error("没有与类型：" + type + " 相匹配的消息处理机制！");
+            //}
 
-            //上传状态
-            String status = "";
+            //logger.info("type is : " + type + ", 数据上传状态为--------" + status);
+            //tcLog.setUpStatus(
+            //        Short.parseShort(
+            //                !StringUtils.isBlank(status)?status:"0"));
+            //
+            ////医院编码和名称
+            //tcLog.setUpMechCode(hospitalCode);
+            //tcLog.setUpMechName(hospitalName);
+            ////保存日志
+            //tcLogService.save(tcLog);
+            //logger.debug("Type is : " + type + ", log is saved!");
 
-            if(type.equals("peis")) {
-                logger.info("peis服务启动");
-                status = taskService.getPerCheckInfoProc("001", rowlimit);
-                tcLog.setUpType(Constants.UploadType.PEIS.getValue());
-            } else if(type.equals("lis")) {
-                logger.info("lis服务启动");
-                status = taskService.getLisPatientInfoProc("001",rowlimit);
-                tcLog.setUpType(Constants.UploadType.LIS.getValue());
-            }
-
-            logger.info("---------数据上传状态为--------" + status);
-            tcLog.setUpStatus(
-                    Short.parseShort(
-                            !StringUtils.isBlank(status)?status:"0"));
-
-            //医院编码和名称
-            tcLog.setUpMechCode(hospitalCode);
-            tcLog.setUpMechName(hospitalName);
-            //保存日志
-            tcLogService.save(tcLog);
+            long endProcess = System.currentTimeMillis();
+            logger.debug("End processing msg , type is :" + type + ", time used " + (endProcess-beginProcess) + " ms.");
         } catch (Exception e) {
             e.printStackTrace();
         }
