@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="cloud-peis-api:war">
-    <output-path>$PROJECT_DIR$/cloud-peis-api/target</output-path>
-    <root id="archive" name="cloud-peis-api.war">
-      <element id="artifact" artifact-name="cloud-peis-api:war exploded" />
-    </root>
-  </artifact>
-</component>

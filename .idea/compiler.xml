@@ -18,15 +18,15 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="cloud-commonservice" target="1.7" />
-      <module name="cloud-commonservice-eureka" target="1.7" />
-      <module name="cloud-component" target="1.7" />
-      <module name="cloud-component-swagger" target="1.7" />
-      <module name="cloud-component-utils" target="1.7" />
+      <module name="cloud-commonservice" target="1.8" />
+      <module name="cloud-commonservice-eureka" target="1.8" />
+      <module name="cloud-component" target="1.8" />
+      <module name="cloud-component-swagger" target="1.8" />
+      <module name="cloud-component-utils" target="1.8" />
       <module name="cloud-data" target="1.8" />
-      <module name="cloud-data-api" target="1.7" />
-      <module name="cloud-data-dao" target="1.7" />
-      <module name="cloud-data-service" target="1.7" />
+      <module name="cloud-data-api" target="1.8" />
+      <module name="cloud-data-dao" target="1.8" />
+      <module name="cloud-data-service" target="1.8" />
       <module name="cloud-task" target="1.8" />
       <module name="cloud-task-api" target="1.8" />
       <module name="cloud-task-dao" target="1.8" />

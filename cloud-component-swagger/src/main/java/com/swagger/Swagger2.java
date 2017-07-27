@@ -1,9 +1,5 @@
 package com.swagger;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 48a59997046306a92c5b552d972732232f2990e7
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -28,11 +24,7 @@ public class Swagger2 {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-<<<<<<< HEAD
-                .apis(RequestHandlerSelectors.basePackage("com.jfsoft.peis.controller"))
-=======
                 .apis(RequestHandlerSelectors.basePackage("com.jfsoft.*.controller"))
->>>>>>> 48a59997046306a92c5b552d972732232f2990e7
                 .paths(PathSelectors.any())
                 .build();
     }

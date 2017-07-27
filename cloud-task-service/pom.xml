@@ -20,12 +20,6 @@
             <artifactId>cloud-task-dao</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-        <dependency>
-            <groupId>com.jfsoft</groupId>
-            <artifactId>cloud-component-utils</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <type>jar</type>
-        </dependency>
 
     </dependencies>
 
