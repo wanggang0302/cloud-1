@@ -2,44 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48582612-7a80-4203-8e52-d15c6625908b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjrt_1_8_10.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_hateoas_spring_hateoas_0_23_0_RELEASE.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/cloud_lis_api_war.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/cloud_lis_api_war_exploded.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/cloud_peis_api_war.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/cloud_peis_api_war_exploded.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/cloud_task_peis_war.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/cloud_task_peis_war_exploded.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/demo_war.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/demo_war_exploded.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-component-swagger/target/cloud-component-swagger-1.0-SNAPSHOT.jar.original" afterPath="$PROJECT_DIR$/cloud-component-swagger/target/cloud-component-swagger-1.0-SNAPSHOT.jar.original" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-commonservice-eureka/cloud-commonservice-eureka.iml" afterPath="$PROJECT_DIR$/cloud-commonservice-eureka/cloud-commonservice-eureka.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-commonservice/cloud-commonservice.iml" afterPath="$PROJECT_DIR$/cloud-commonservice/cloud-commonservice.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-component-swagger/cloud-component-swagger.iml" afterPath="$PROJECT_DIR$/cloud-component-swagger/cloud-component-swagger.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-component-swagger/src/main/java/com/swagger/Swagger2.java" afterPath="$PROJECT_DIR$/cloud-component-swagger/src/main/java/com/swagger/Swagger2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-component-utils/cloud-component-utils.iml" afterPath="$PROJECT_DIR$/cloud-component-utils/cloud-component-utils.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-component/cloud-component.iml" afterPath="$PROJECT_DIR$/cloud-component/cloud-component.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-component/pom.xml" afterPath="$PROJECT_DIR$/cloud-component/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-data-api/cloud-data-api.iml" afterPath="$PROJECT_DIR$/cloud-data-api/cloud-data-api.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-data-api/pom.xml" afterPath="$PROJECT_DIR$/cloud-data-api/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-data-dao/cloud-data-dao.iml" afterPath="$PROJECT_DIR$/cloud-data-dao/cloud-data-dao.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-data-dao/pom.xml" afterPath="$PROJECT_DIR$/cloud-data-dao/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-data-service/cloud-data-service.iml" afterPath="$PROJECT_DIR$/cloud-data-service/cloud-data-service.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-data-service/pom.xml" afterPath="$PROJECT_DIR$/cloud-data-service/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-api/cloud-task-api.iml" afterPath="$PROJECT_DIR$/cloud-task-api/cloud-task-api.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-api/pom.xml" afterPath="$PROJECT_DIR$/cloud-task-api/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-api/target/classes/application.properties" afterPath="$PROJECT_DIR$/cloud-task-api/target/classes/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-dao/cloud-task-dao.iml" afterPath="$PROJECT_DIR$/cloud-task-dao/cloud-task-dao.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-dao/target/classes/com/jfsoft/task/mapper/PeisMapper.xml" afterPath="$PROJECT_DIR$/cloud-task-dao/target/classes/com/jfsoft/task/mapper/PeisMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-service/cloud-task-service.iml" afterPath="$PROJECT_DIR$/cloud-task-service/cloud-task-service.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-service/pom.xml" afterPath="$PROJECT_DIR$/cloud-task-service/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/cloud-task-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task/cloud-task.iml" afterPath="$PROJECT_DIR$/cloud-task/cloud-task.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task/pom.xml" afterPath="$PROJECT_DIR$/cloud-task/pom.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/cloud-commonservice/target/" />
@@ -1335,7 +1298,7 @@
       <workItem from="1501140828172" duration="827000" />
       <workItem from="1501144606084" duration="740000" />
       <workItem from="1501145373067" duration="1480000" />
-      <workItem from="1501146887113" duration="938000" />
+      <workItem from="1501146887113" duration="1001000" />
     </task>
     <task id="LOCAL-00001" summary="添加定时任务模块">
       <created>1498705079645</created>
@@ -1414,11 +1377,18 @@
       <option name="project" value="LOCAL" />
       <updated>1501138382435</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="修改程序pom依赖">
+      <created>1501147855268</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1501147855268</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="273742000" />
+    <option name="totallyTimeSpent" value="273805000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1488,7 +1458,8 @@
     <MESSAGE value="实现推送模板消息到微信客户端" />
     <MESSAGE value="将推送模板消息到微信客户端的代码移动到cloud-data中" />
     <MESSAGE value="去掉发送微信消息的方法" />
-    <option name="LAST_COMMIT_MESSAGE" value="去掉发送微信消息的方法" />
+    <MESSAGE value="修改程序pom依赖" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改程序pom依赖" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
