@@ -14,12 +14,20 @@
         <result column="areacode" property="areacode" />
     </resultMap>
 
-    <!-- 调用存储过程，返回体检者信息 -->
-    <select id="getPerCheckinfoList" parameterType="java.util.Map" statementType="CALLABLE">
-        {call RPT_PER_CHECKINFO(
-            #{area_code,jdbcType=VARCHAR,mode=IN},
-            #{rowlimit,jdbcType=DECIMAL,mode=IN},
-            #{cur_arg_per,jdbcType=CURSOR,javaType=ResultSet, mode=OUT,resultMap=perCheckInfoList}
+    <parameterMap id="paramsMap" type="hashmap">
+        <parameter property="areacode" mode="IN" javaType="java.lang.String" jdbcType="VARCHAR" />
+        <parameter property="rowlimit" mode="IN" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </parameterMap>
+
+    <!-- 调用SqlServer存储过程，返回体检者信息 -->
+    <select id="getPerCheckinfoList" parameterMap="paramsMap" statementType="CALLABLE" resultMap="perCheckInfoList">
+        {call RPT_PER_CHECKINFO(#{areacode}, #{rowlimit})}
+    </select>
+
+    <!-- 调用SqlServer存储过程，修改数据状态，确保不再上传此条记录 -->
+    <select id="updatePerCheckinfoState" parameterType="java.util.Map" statementType="CALLABLE">
+        {call RPT_CALLBACK(
+            #{id, mode=IN, jdbcType=INTEGER}
         )}
     </select>
 

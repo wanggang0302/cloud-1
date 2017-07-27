@@ -21,4 +21,11 @@ public interface PeisMapper {
      */
     List<TcPerCheckinfo> getPerCheckinfoList(Map<String, Object> params);
 
+    /**
+     * 调用存储过程，设置体检者数据状态
+     * wanggang
+     * 2017-07-27 09:51:39
+     */
+    void updatePerCheckinfoState(Map<String, Object> params);
+
 }

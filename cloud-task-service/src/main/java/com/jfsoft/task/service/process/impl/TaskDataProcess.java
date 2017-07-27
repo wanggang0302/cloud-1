@@ -38,9 +38,14 @@ public abstract class TaskDataProcess implements ITaskDataProcess {
 
         //数据处理并上传，返回上传状态
         handleData();
+
+        //
     }
 
+    //处理数据
     protected abstract void handleData() throws Exception;
+
+    //
 
     protected void saveUploadLog(String type, String state) throws Exception {
 

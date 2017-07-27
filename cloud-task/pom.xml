@@ -28,6 +28,7 @@
         <java.version>1.8</java.version>
         <mybatis-spring-boot>1.3.0</mybatis-spring-boot>
         <mysql-connector>5.1.39</mysql-connector>
+        <sqlserver-connector>6.2.1.jre8</sqlserver-connector>
         <jackson.version>2.8.8</jackson.version>
     </properties>
 
@@ -105,6 +106,12 @@
             <groupId>com.oracle</groupId>
             <artifactId>ojdbc6</artifactId>
             <version>11.2.0.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>${sqlserver-connector}</version>
         </dependency>
 
         <dependency>

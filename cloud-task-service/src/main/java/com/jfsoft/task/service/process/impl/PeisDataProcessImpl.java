@@ -55,12 +55,9 @@ public class PeisDataProcessImpl extends TaskDataProcess {
 
         //调用存储过程，查询体检者信息
         Map<String, Object> params = new HashMap<String, Object>();
-        params.put("area_code", areacode);
+        params.put("areacode", areacode);
         params.put("rowlimit", rowlimit);
-        params.put("cur_arg_per", new ArrayList<TcPerCheckinfo>());
-        peisMapper.getPerCheckinfoList(params);
-
-        List<TcPerCheckinfo> perCheckinfoList = (List<TcPerCheckinfo>) params.get("cur_arg_per");
+        List<TcPerCheckinfo> perCheckinfoList = peisMapper.getPerCheckinfoList(params);
 
         return perCheckinfoList;
     }
@@ -84,6 +81,10 @@ public class PeisDataProcessImpl extends TaskDataProcess {
             logger.error("Delete zip file from upload path fail, err msg is : " + e.getMessage());
             e.printStackTrace();
         }
+
+        //获取云端图片的路径
+        String cloudFilePath = "";
+
         try {
             //生成zip文件到图片路径下
             StringBuilder zipFileNameSb = new StringBuilder("");
@@ -108,19 +109,10 @@ public class PeisDataProcessImpl extends TaskDataProcess {
             MockMultipartFile pic = new MockMultipartFile("file", picName, "", fs);
             Map<String, Object> map = cloudFeignClient.uploadPic(pic);
             //获取云端图片的路径
-            String cloudFilePath = (String) map.get("filePath");
-            //重新组装检验信息，更新filePath字段
-            tcPerCheckinfo.setFilePath(cloudFilePath);
+            cloudFilePath = (String) map.get("filePath");
 
-            String perCheckinfoJson = JSON.toJSONString(tcPerCheckinfo);
-            //上传数据到云平台
-            String state = cloudFeignClient.peisSave(perCheckinfoJson);
-
-            logger.info("PEIS data, 数据上传状态为--------" + state);
-
-            saveUploadLog(Constants.UploadType.PEIS.getValue(), state);
         } catch (Exception e) {
-            logger.error("PEIS data uploading error，err msg is {}。", e.getMessage());
+            logger.error("PEIS image uploading error，err msg is {}。", e.getMessage());
             e.printStackTrace();
         } finally {
             if(null!=fs) fs.close();
@@ -129,6 +121,34 @@ public class PeisDataProcessImpl extends TaskDataProcess {
                 zipFile.delete();
             }
         }
+
+        //数据上传到云平台的状态
+        String state = "";
+
+        try {
+
+            //重新组装检验信息，更新filePath字段
+            tcPerCheckinfo.setFilePath(cloudFilePath);
+
+            String perCheckinfoJson = JSON.toJSONString(tcPerCheckinfo);
+            //上传数据到云平台
+            state = cloudFeignClient.peisSave(perCheckinfoJson);
+
+            logger.info("PEIS data, 数据上传状态为--------" + state);
+        } catch (Exception e) {
+            logger.error("PEIS data uploading error，err msg is {}。", e.getMessage());
+            e.printStackTrace();
+        }
+
+        //如果上传失败，查询历史失败次数
+
+        //如果上传失败，更新失败次数到日志表
+
+        //如果数据上传成功或者数据上传失败超过一定次数，需要调用存储过程，确保下次执行不再查询到此条记录
+
+
+        //保存上传信息
+        saveUploadLog(Constants.UploadType.PEIS.getValue(), state);
     }
 
 }
