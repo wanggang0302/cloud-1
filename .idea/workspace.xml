@@ -1298,7 +1298,7 @@
       <workItem from="1501140828172" duration="827000" />
       <workItem from="1501144606084" duration="740000" />
       <workItem from="1501145373067" duration="1480000" />
-      <workItem from="1501146887113" duration="1001000" />
+      <workItem from="1501146887113" duration="1011000" />
     </task>
     <task id="LOCAL-00001" summary="添加定时任务模块">
       <created>1498705079645</created>
@@ -1384,11 +1384,18 @@
       <option name="project" value="LOCAL" />
       <updated>1501147855268</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="修改程序pom依赖">
+      <created>1501147904491</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1501147904491</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="273805000" />
+    <option name="totallyTimeSpent" value="273815000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
