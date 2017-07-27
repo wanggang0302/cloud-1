@@ -21,6 +21,7 @@
     </parent>
 
     <dependencies>
+<<<<<<< HEAD
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -31,13 +32,45 @@
                     <artifactId>spring-boot-starter-logging</artifactId>
                 </exclusion>
             </exclusions>
+=======
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+>>>>>>> 48a59997046306a92c5b552d972732232f2990e7
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
+<<<<<<< HEAD
             <artifactId>spring-boot-starter-log4j</artifactId>
         </dependency>
 
     </dependencies>
 
+=======
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+    </dependencies>
+    <!--<dependencies>
+        <dependency>
+            <groupId>com.jfsoft</groupId>
+            <artifactId>cloud-peis</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>-->
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+>>>>>>> 48a59997046306a92c5b552d972732232f2990e7
 </project>

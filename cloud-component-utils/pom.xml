@@ -3,14 +3,20 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
+<<<<<<< HEAD
         <groupId>com.jfsoft</groupId>
         <artifactId>cloud-component</artifactId>
+=======
+        <artifactId>cloud-component</artifactId>
+        <groupId>com.jfsoft</groupId>
+>>>>>>> 48a59997046306a92c5b552d972732232f2990e7
         <version>1.0-SNAPSHOT</version>
         <relativePath>../cloud-component/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>cloud-component-utils</artifactId>
+<<<<<<< HEAD
     <packaging>jar</packaging>
     <dependencies>
         <dependency>
@@ -18,6 +24,8 @@
             <artifactId>slf4j-api</artifactId>
         </dependency>
     </dependencies>
+=======
+>>>>>>> 48a59997046306a92c5b552d972732232f2990e7
 
 
 </project>

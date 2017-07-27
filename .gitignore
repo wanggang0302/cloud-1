@@ -20,4 +20,7 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+<<<<<<< HEAD
 /cloud-component-utils/target/
+=======
+>>>>>>> 48a59997046306a92c5b552d972732232f2990e7
