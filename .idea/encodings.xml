@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-<<<<<<< HEAD
-  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
-    <file url="file://$PROJECT_DIR$/cloud-component" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-component-swagger" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-component-utils" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-task" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-task-api" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-task-dao" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-task-service" charset="UTF-8" />
-    <file url="PROJECT" charset="UTF-8" />
-=======
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/cloud-commonservice" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-commonservice-eureka" charset="UTF-8" />
@@ -18,9 +7,10 @@
     <file url="file://$PROJECT_DIR$/cloud-component-swagger" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-component-utils" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-data" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-data-api" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-data-dao" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-data-service" charset="UTF-8" />
->>>>>>> 48a59997046306a92c5b552d972732232f2990e7
+    <file url="file://$PROJECT_DIR$/cloud-task" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-task-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-task-dao" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-task-service" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

@@ -6,14 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-<<<<<<< HEAD
+        <module name="cloud-commonservice-eureka" />
         <module name="cloud-component-swagger" />
         <module name="cloud-component-utils" />
+        <module name="cloud-data-api" />
+        <module name="cloud-data-dao" />
+        <module name="cloud-data-service" />
         <module name="cloud-task-api" />
         <module name="cloud-task-dao" />
-        <module name="cloud-task-peis" />
-        <module name="cloud-task-peis-dao" />
-        <module name="cloud-task-peis-servcie" />
         <module name="cloud-task-service" />
       </profile>
     </annotationProcessing>
@@ -23,42 +23,14 @@
       <module name="cloud-component" target="1.7" />
       <module name="cloud-component-swagger" target="1.7" />
       <module name="cloud-component-utils" target="1.7" />
-      <module name="cloud-lis" target="1.8" />
-      <module name="cloud-lis-api" target="1.8" />
-      <module name="cloud-lis-dao" target="1.8" />
-      <module name="cloud-lis-service" target="1.8" />
-      <module name="cloud-peis" target="1.8" />
-      <module name="cloud-peis-api" target="1.8" />
-      <module name="cloud-peis-dao" target="1.8" />
-      <module name="cloud-peis-service" target="1.8" />
+      <module name="cloud-data" target="1.8" />
+      <module name="cloud-data-api" target="1.7" />
+      <module name="cloud-data-dao" target="1.7" />
+      <module name="cloud-data-service" target="1.7" />
       <module name="cloud-task" target="1.8" />
       <module name="cloud-task-api" target="1.8" />
       <module name="cloud-task-dao" target="1.8" />
-      <module name="cloud-task-peis" target="1.8" />
-      <module name="cloud-task-peis-dao" target="1.8" />
-      <module name="cloud-task-peis-servcie" target="1.8" />
       <module name="cloud-task-service" target="1.8" />
-      <module name="demo" target="1.7" />
-=======
-        <module name="cloud-commonservice-eureka" />
-        <module name="cloud-component-swagger" />
-        <module name="cloud-component-utils" />
-        <module name="cloud-data-api" />
-        <module name="cloud-data-dao" />
-        <module name="cloud-data-service" />
-      </profile>
-    </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="cloud-commonservice" target="1.8" />
-      <module name="cloud-commonservice-eureka" target="1.8" />
-      <module name="cloud-component" target="1.6" />
-      <module name="cloud-component-swagger" target="1.8" />
-      <module name="cloud-component-utils" target="1.6" />
-      <module name="cloud-data" target="1.8" />
-      <module name="cloud-data-api" target="1.8" />
-      <module name="cloud-data-dao" target="1.8" />
-      <module name="cloud-data-service" target="1.8" />
->>>>>>> 48a59997046306a92c5b552d972732232f2990e7
     </bytecodeTargetLevel>
   </component>
 </project>

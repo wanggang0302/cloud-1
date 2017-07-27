@@ -19,7 +19,6 @@
 
     <dependencies>
         <dependency>
-<<<<<<< HEAD
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
@@ -36,8 +35,6 @@
         </dependency>
 
         <dependency>
-=======
->>>>>>> 48a59997046306a92c5b552d972732232f2990e7
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
             <version>2.2.2</version>
@@ -47,7 +44,6 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.2.2</version>
         </dependency>
-<<<<<<< HEAD
 
     </dependencies>
 
@@ -60,18 +56,4 @@
         </plugins>
     </build>
 
-=======
-        <!--<dependency>
-            <groupId>com.jfsoft</groupId>
-            <artifactId>cloud-peis-api</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>mysql</groupId>
-                    <artifactId>mysql-connector-java</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>-->
-    </dependencies>
->>>>>>> 48a59997046306a92c5b552d972732232f2990e7
 </project>

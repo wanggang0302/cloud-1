@@ -1,39 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-<<<<<<< HEAD
   <component name="FrameworkDetectionExcludesConfiguration">
-    <file type="web" url="file://$PROJECT_DIR$/cloud-lis-api" />
-    <file type="web" url="file://$PROJECT_DIR$/cloud-peis-api" />
     <file type="web" url="file://$PROJECT_DIR$/cloud-task-api" />
-    <file type="web" url="file://$PROJECT_DIR$/demo" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/cloud-peis/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-task-servcie/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-commonservice/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-commonservice-eureka/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-component/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-component-swagger/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-component-utils/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-data/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-data-api/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-data-dao/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-data-service/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-task/pom.xml" />
-        <option value="$PROJECT_DIR$/cloud-lis/pom.xml" />
-        <option value="$PROJECT_DIR$/cloud-task-peis/pom.xml" />
-        <option value="$PROJECT_DIR$/cloud-task-peis-dao/pom.xml" />
-        <option value="$PROJECT_DIR$/cloud-task-peis-servcie/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-task-api/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-task-dao/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-task-service/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
-        <option value="$PROJECT_DIR$/cloud-commonservice-eureka/pom.xml" />
-        <option value="$PROJECT_DIR$/cloud-commonservice/pom.xml" />
-        <option value="$PROJECT_DIR$/cloud-lis-api/pom.xml" />
-        <option value="$PROJECT_DIR$/cloud-lis-dao/pom.xml" />
-        <option value="$PROJECT_DIR$/cloud-lis-service/pom.xml" />
-        <option value="$PROJECT_DIR$/cloud-lis/pom.xml" />
-        <option value="$PROJECT_DIR$/cloud-peis-api/pom.xml" />
-        <option value="$PROJECT_DIR$/cloud-peis-dao/pom.xml" />
-        <option value="$PROJECT_DIR$/cloud-peis-service/pom.xml" />
-        <option value="$PROJECT_DIR$/cloud-peis/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-task-servcie/pom.xml" />
       </set>
     </option>
@@ -41,40 +31,4 @@
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
-=======
-  <component name="MavenProjectsManager">
-    <option name="originalFiles">
-      <list>
-        <option value="$PROJECT_DIR$/cloud-data-service/pom.xml" />
-        <option value="$PROJECT_DIR$/cloud-data-dao/pom.xml" />
-        <option value="$PROJECT_DIR$/cloud-data-api/pom.xml" />
-        <option value="$PROJECT_DIR$/cloud-data/pom.xml" />
-        <option value="$PROJECT_DIR$/cloud-component-utils/pom.xml" />
-        <option value="$PROJECT_DIR$/cloud-component-swagger/pom.xml" />
-        <option value="$PROJECT_DIR$/cloud-component/pom.xml" />
-        <option value="$PROJECT_DIR$/cloud-commonservice-eureka/pom.xml" />
-        <option value="$PROJECT_DIR$/cloud-commonservice/pom.xml" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectRootManager">
-    <output url="file://$PROJECT_DIR$/out" />
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
-  </component>
->>>>>>> 48a59997046306a92c5b552d972732232f2990e7
 </project>
