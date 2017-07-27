@@ -1,7 +1,5 @@
 package com.jfsoft.task.service.uploader;
 
-import sun.net.www.content.text.Generic;
-
 /**
  * 数据上传接口
  * wanggang

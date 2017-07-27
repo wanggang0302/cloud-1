@@ -1,6 +1,5 @@
 package com.jfsoft.task.service.process;
 
-import com.jfsoft.task.service.ITaskService;
 import com.jfsoft.task.service.process.impl.LisDataProcessImpl;
 import com.jfsoft.task.service.process.impl.PeisDataProcessImpl;
 import com.jfsoft.utils.Constants;

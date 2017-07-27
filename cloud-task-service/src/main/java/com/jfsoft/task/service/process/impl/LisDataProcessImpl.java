@@ -1,13 +1,10 @@
 package com.jfsoft.task.service.process.impl;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.jfsoft.task.entity.TcLisPatientinfo;
 import com.jfsoft.task.entity.TcPerCheckinfo;
 import com.jfsoft.task.mapper.LisMapper;
 import com.jfsoft.utils.Constants;
-import com.jfsoft.utils.FileUtil;
-import com.jfsoft.utils.ZipCompressor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +13,10 @@ import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * wanggang

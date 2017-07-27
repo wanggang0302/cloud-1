@@ -1,6 +1,15 @@
+D:\IdeaProjects\0629\cloud\cloud-task-service\src\main\java\com\jfsoft\task\service\process\DataProcessFactory.java
+D:\IdeaProjects\0629\cloud\cloud-task-service\src\main\java\com\jfsoft\task\service\process\impl\PeisDataProcessImpl.java
+D:\IdeaProjects\0629\cloud\cloud-task-service\src\main\java\com\jfsoft\task\service\ITaskService.java
+D:\IdeaProjects\0629\cloud\cloud-task-service\src\main\java\com\jfsoft\task\service\uploader\impl\DataUploader.java
+D:\IdeaProjects\0629\cloud\cloud-task-service\src\main\java\com\jfsoft\task\service\impl\TaskServiceImpl.java
+D:\IdeaProjects\0629\cloud\cloud-task-service\src\main\java\com\jfsoft\task\service\process\impl\TaskDataProcess.java
+D:\IdeaProjects\0629\cloud\cloud-task-service\src\main\java\com\jfsoft\task\service\IWxFeignClient.java
+D:\IdeaProjects\0629\cloud\cloud-task-service\src\main\java\com\jfsoft\task\service\process\impl\LisDataProcessImpl.java
 D:\IdeaProjects\0629\cloud\cloud-task-service\src\main\java\com\jfsoft\task\service\ICloudFeignClient.java
 D:\IdeaProjects\0629\cloud\cloud-task-service\src\main\java\com\jfsoft\log\service\impl\TcLogServiceImpl.java
-D:\IdeaProjects\0629\cloud\cloud-task-service\src\main\java\com\jfsoft\task\service\ITaskService.java
+D:\IdeaProjects\0629\cloud\cloud-task-service\src\main\java\com\jfsoft\task\service\uploader\IDataUploader.java
+D:\IdeaProjects\0629\cloud\cloud-task-service\src\main\java\com\jfsoft\task\service\process\ITaskDataProcess.java
+D:\IdeaProjects\0629\cloud\cloud-task-service\src\main\java\com\jfsoft\task\service\uploader\impl\PeisDataUploader.java
 D:\IdeaProjects\0629\cloud\cloud-task-service\src\main\java\com\jfsoft\log\service\ITcLogService.java
-D:\IdeaProjects\0629\cloud\cloud-task-service\src\main\java\com\jfsoft\task\service\impl\TaskServiceImpl.java
 D:\IdeaProjects\0629\cloud\cloud-task-service\src\main\java\com\jfsoft\task\service\FeignMultipartSupportConfig.java
