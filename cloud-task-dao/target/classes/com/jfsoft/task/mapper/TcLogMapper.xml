@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jfsoft.task.mapper.TcLogMapper" >
+
+    <resultMap id="BaseResultMap" type="com.jfsoft.task.entity.TcLog" >
+		<id column="ID" property="id" jdbcType="INTEGER" />
+		<result column="up_mech_code" property="upMechCode" jdbcType="VARCHAR" />
+		<result column="up_mech_name" property="upMechName" jdbcType="VARCHAR" />
+		<result column="up_date" property="upDate" jdbcType="TIMESTAMP" />
+		<result column="up_type" property="upType" jdbcType="CHAR" />
+		<result column="up_status" property="upStatus" jdbcType="BIT" />
+	</resultMap>
+
+	<sql id="Base_Column_List" >
+		ID, up_mech_code, up_mech_name, up_date, up_type, up_status
+	</sql>
+
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+		select 
+		<include refid="Base_Column_List" />
+		from tc_log
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+		delete from tc_log
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="insert" parameterType="com.jfsoft.task.entity.TcLog" >
+		insert into tc_log (ID, up_mech_code, up_mech_name, 
+			up_date, up_type, up_status)
+		values (#{id,jdbcType=INTEGER}, #{upMechCode,jdbcType=VARCHAR}, #{upMechName,jdbcType=VARCHAR}, 
+			#{upDate,jdbcType=TIMESTAMP}, #{upType,jdbcType=CHAR}, #{upStatus,jdbcType=BIT})
+	</insert>
+
+	<insert id="insertSelective" parameterType="com.jfsoft.task.entity.TcLog" >
+		insert into tc_log
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="id != null" >
+				ID,
+			</if>
+			<if test="upMechCode != null" >
+				up_mech_code,
+			</if>
+			<if test="upMechName != null" >
+				up_mech_name,
+			</if>
+			<if test="upDate != null" >
+				up_date,
+			</if>
+			<if test="upType != null" >
+				up_type,
+			</if>
+			<if test="upStatus != null" >
+				up_status,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="id != null" >
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="upMechCode != null" >
+				#{upMechCode,jdbcType=VARCHAR},
+			</if>
+			<if test="upMechName != null" >
+				#{upMechName,jdbcType=VARCHAR},
+			</if>
+			<if test="upDate != null" >
+				#{upDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="upType != null" >
+				#{upType,jdbcType=CHAR},
+			</if>
+			<if test="upStatus != null" >
+				#{upStatus,jdbcType=BIT},
+			</if>
+		</trim>
+	</insert>
+
+	<update id="updateByPrimaryKeySelective" parameterType="com.jfsoft.task.entity.TcLog" >
+		update tc_log
+		<set >
+			<if test="upMechCode != null" >
+				up_mech_code = #{upMechCode,jdbcType=VARCHAR},
+			</if>
+			<if test="upMechName != null" >
+				up_mech_name = #{upMechName,jdbcType=VARCHAR},
+			</if>
+			<if test="upDate != null" >
+				up_date = #{upDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="upType != null" >
+				up_type = #{upType,jdbcType=CHAR},
+			</if>
+			<if test="upStatus != null" >
+				up_status = #{upStatus,jdbcType=BIT},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="com.jfsoft.task.entity.TcLog" >
+		update tc_log
+		set up_mech_code = #{upMechCode,jdbcType=VARCHAR},
+			up_mech_name = #{upMechName,jdbcType=VARCHAR},
+			up_date = #{upDate,jdbcType=TIMESTAMP},
+			up_type = #{upType,jdbcType=CHAR},
+			up_status = #{upStatus,jdbcType=BIT}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+    <!-- 查询日志列表 -->
+	<select id="selectLogList" parameterType="java.util.Map" resultMap="BaseResultMap">
+        SELECT
+            id,up_mech_name,up_date,up_type,up_status
+        FROM
+            tc_log
+        <where>
+            <if test="upMechName!=null and upMechName!=''">
+                up_mech_name like CONCAT('%',#{upMechName},'%'),
+            </if>
+            <if test="upType!=null and upType!=''">
+                up_type = #{upType},
+            </if>
+            <if test="upStatus!=null and upStatus!=''" >
+                up_status = #{upStatus},
+            </if>
+            <choose>
+                <when test="null!=upDateBegin and ''!=upDateBegin and null!=upDateEnd and ''!=upDateEnd">
+                    AND up_date between DATE_FORMAT(#{upDateBegin},'%Y-%m-%d %H:%i:%S') and DATE_FORMAT(#{upDateEnd},'%Y-%m-%d %H:%i:%S')
+                </when>
+                <when test="null!=upDateBegin and ''!=upDateBegin and (null==upDateEnd || ''==upDateEnd)">
+                    AND up_date>=DATE_FORMAT(#{upDateBegin},'%Y-%m-%d %H:%i:%S')
+                </when>
+                <when test="(null==upDateBegin || ''==upDateBegin) and null!=upDateEnd and ''!=upDateEnd">
+                    AND up_date<![CDATA[<=]]>DATE_FORMAT(#{upDateEnd},'%Y-%m-%d %H:%i:%S')
+                </when>
+            </choose>
+        </where>
+        ORDER BY
+            up_date DESC
+    </select>
+
+</mapper>

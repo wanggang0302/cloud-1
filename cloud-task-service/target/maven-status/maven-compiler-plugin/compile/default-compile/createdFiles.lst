@@ -1,0 +1,6 @@
+com\jfsoft\task\service\ICloudFeignClient.class
+com\jfsoft\task\service\FeignMultipartSupportConfig.class
+com\jfsoft\log\service\ITcLogService.class
+com\jfsoft\log\service\impl\TcLogServiceImpl.class
+com\jfsoft\task\service\impl\TaskServiceImpl.class
+com\jfsoft\task\service\ITaskService.class
