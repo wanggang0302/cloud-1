@@ -4,11 +4,7 @@
 
     <!-- 调用存储过程，获得Lis人员信息 -->
     <select id="getLisPatInfoList" parameterType="java.util.Map" statementType="CALLABLE">
-        {call GetLisPatInfo(
-        #{area_code,jdbcType=VARCHAR,mode=IN},
-        #{rowlimit,jdbcType=DECIMAL,mode=IN},
-        #{cur_arg_per,jdbcType=CURSOR,javaType=ResultSet, mode=OUT,resultMap=perCheckInfoList}
-        )}
+        {call GetLisPatInfo(#{rowlimit,jdbcType=DECIMAL,mode=IN}}
     </select>
 
 </mapper>

@@ -1,7 +1,6 @@
 package com.jfsoft.task.service.process.impl;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.jfsoft.task.entity.TcPerCheckinfo;
 import com.jfsoft.task.mapper.PeisMapper;
 import com.jfsoft.utils.Constants;
@@ -15,7 +14,9 @@ import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Peis(体检)数据处理

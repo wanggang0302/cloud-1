@@ -1,15 +1,6 @@
 com\jfsoft\task\service\ICloudFeignClient.class
-com\jfsoft\task\service\uploader\IDataUploader.class
-com\jfsoft\task\service\impl\TaskServiceImpl.class
 com\jfsoft\task\service\FeignMultipartSupportConfig.class
-com\jfsoft\task\service\process\DataProcessFactory.class
-com\jfsoft\task\service\uploader\impl\PeisDataUploader.class
-com\jfsoft\task\service\process\impl\LisDataProcessImpl.class
-com\jfsoft\task\service\process\impl\PeisDataProcessImpl.class
-com\jfsoft\task\service\uploader\impl\DataUploader.class
-com\jfsoft\task\service\IWxFeignClient.class
-com\jfsoft\task\service\ITaskService.class
 com\jfsoft\log\service\ITcLogService.class
 com\jfsoft\log\service\impl\TcLogServiceImpl.class
-com\jfsoft\task\service\process\impl\TaskDataProcess.class
-com\jfsoft\task\service\process\ITaskDataProcess.class
+com\jfsoft\task\service\impl\TaskServiceImpl.class
+com\jfsoft\task\service\ITaskService.class

@@ -1,5 +1,7 @@
 package com.jfsoft.task.service;
 
+import java.awt.*;
+
 /**
  * 定时任务业务接口
  * wanggang
@@ -36,5 +38,4 @@ public interface ITaskService {
     // * @throws Exception
     // */
     //public String getLisPatientInfoProc(String areacode, String rowlimit) throws Exception;
-
 }
