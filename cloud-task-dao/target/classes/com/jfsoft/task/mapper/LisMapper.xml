@@ -1,14 +1,49 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.jfsoft.task.mapper.LisMapper" >
+    <resultMap type="com.jfsoft.task.entity.TcLisPatientinfo" id="LisPatientinfoList">
+        <id column="id" property="id" />
+        <result column="patinfoid" property="patinfoid" />
+        <result column="testdate" property="testdate" />
+        <result column="name" property="name" />
+        <result column="pycode" property="pycode" />
+        <result column="sex" property="sex" />
+        <result column="age" property="age" />
+        <result column="ageunit" property="ageunit" />
+        <result column="bednum" property="bednum" />
+        <result column="pid" property="pid" />
+        <result column="dptname" property="dptname" />
+        <result column="pattype" property="pattype" />
+        <result column="lczd" property="lczd" />
+        <result column="barcode" property="barcode" />
+        <result column="memo" property="memo" />
+        <result column="regname" property="regname" />
+        <result column="feename" property="feename" />
+        <result column="testtype" property="testtype" />
+        <result column="testopt" property="testopt" />
+        <result column="checkopt" property="checkopt" />
+        <result column="checkTime" property="checkTime" />
+        <result column="checkdate" property="checkdate" />
+        <result column="printopt" property="printopt" />
+        <result column="printdate" property="printdate" />
+        <result column="printstate" property="printstate" />
+        <result column="filepath" property="filepath" />
+    </resultMap>
+
+    <parameterMap id="paramsMap" type="hashmap">
+        <parameter property="rowlimit" mode="IN" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </parameterMap>
 
     <!-- 调用存储过程，获得Lis人员信息 -->
-    <select id="getLisPatInfoList" parameterType="java.util.Map" statementType="CALLABLE">
-        {call GetLisPatInfo(
-        #{area_code,jdbcType=VARCHAR,mode=IN},
-        #{rowlimit,jdbcType=DECIMAL,mode=IN},
-        #{cur_arg_per,jdbcType=CURSOR,javaType=ResultSet, mode=OUT,resultMap=perCheckInfoList}
+    <select id="getLisPatInfoList" parameterMap="paramsMap" statementType="CALLABLE" resultMap="LisPatientinfoList">
+        {call GetLisPatInfo(#{rowlimit})}
+    </select>
+
+    <!-- 调用SqlServer存储过程，修改数据状态，确保不再上传此条记录 -->
+    <select id="insertTag" parameterType="java.lang.Integer" statementType="CALLABLE">
+        {call wx_return(#{patinfoid}
         )}
     </select>
+
 
 </mapper>
