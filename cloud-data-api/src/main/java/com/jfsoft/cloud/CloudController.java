@@ -95,7 +95,8 @@ public class CloudController {
     public HttpEntity lisSave(String info){
         TcLisPatientinfo tcLisPatientinfo = JSON.parseObject(info, TcLisPatientinfo.class);
         String pic = tcLisPatientinfo.getPic();
-        System.out.println(pic);
+        //System.out.println(pic);
         return new ResponseEntity<>("OK", HttpStatus.OK);
     }
+
 }

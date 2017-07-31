@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * Created by web on 2017/6/28.
+ * PEIS（体检）接口实现类
+ * wanggang
+ * 2017-07-28 10:31:57
  */
 @Service
 public class PeisServiceImpl implements IPeisService {
@@ -15,8 +17,6 @@ public class PeisServiceImpl implements IPeisService {
     @Autowired
     private TcPerCheckinfoMapper tcPerCheckinfoMapper;
 
-
-    @Override
     public Integer insertPeisPercheckinfo(TcPerCheckinfo tcPerCheckinfo) {
         return tcPerCheckinfoMapper.insertSelective(tcPerCheckinfo);
     }

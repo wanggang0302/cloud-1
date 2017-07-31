@@ -3,6 +3,7 @@ package com.jfsoft.log.service;
 import com.jfsoft.task.entity.TcLog;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 日志保存业务接口
@@ -32,5 +33,13 @@ public interface ITcLogService {
      */
     public List<TcLog> findList(String upMechName, String upType, String upStatus,
                                 String upDateBegin, String upDateEnd) throws Exception;
+
+    /**
+     * 查询上传失败的日志记录
+     * @param upType 上传d
+     * @return
+     * @throws Exception
+     */
+    public Map<String, Long> selectUploadFailureLog(String upType) throws Exception;
 
 }

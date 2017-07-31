@@ -22,13 +22,13 @@ public class Constants {
 
     /**
      * 上传状态
-     * 1 SUCCESS
-     * 2 FAILURE
+     * 0 SUCCESS
+     * 1 FAILURE
      */
     public enum UploadStatus {
 
-        SUCCESS("1", "成功"),
-        FAILURE("2", "失败");
+        SUCCESS("0", "成功"),
+        FAILURE("1", "失败");
 
         private String value;
         private String name;

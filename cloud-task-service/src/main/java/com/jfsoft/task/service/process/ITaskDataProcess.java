@@ -9,11 +9,11 @@ public interface ITaskDataProcess {
 
     /**
      * 上传数据到云平台
-     * @param areacode 区域编码
+     * @param hospitalId 医院编码
      * @param rowlimit 每次上传查询的条数
      * @return
      * @throws Exception
      */
-    public void uploadData(String areacode, String rowlimit) throws Exception;
+    public void uploadData(String hospitalId, String rowlimit) throws Exception;
 
 }

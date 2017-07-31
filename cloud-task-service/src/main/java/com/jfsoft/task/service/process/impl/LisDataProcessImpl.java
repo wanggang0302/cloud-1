@@ -31,6 +31,11 @@ public class LisDataProcessImpl extends TaskDataProcess {
     @Autowired
     private LisMapper lisMpper;
 
+    protected Map<String, Long> selectUploadLog() throws Exception {
+
+        return tcLogService.selectUploadFailureLog(Constants.UploadType.LIS.getValue());
+    }
+
     protected void handleData() throws Exception {
 
         List<TcLisPatientinfo> lisPatientinfoList = getLisPatientinfoData();
@@ -45,7 +50,7 @@ public class LisDataProcessImpl extends TaskDataProcess {
     private List<TcLisPatientinfo> getLisPatientinfoData() {
 
         Map<String, Object> params = new HashMap<String, Object>();
-        params.put("area_code", areacode);
+        params.put("area_code", "");
         params.put("rowlimit", rowlimit);
         params.put("cur_arg_per", new ArrayList<TcPerCheckinfo>());
         lisMpper.getLisPatInfoList(params);
@@ -92,7 +97,7 @@ public class LisDataProcessImpl extends TaskDataProcess {
 
         logger.info("LIS data, 数据上传状态为--------" + state);
 
-        saveUploadLog(Constants.UploadType.PEIS.getValue(), state);
+        saveUploadLog(Integer.toString(lisPatientinfo.getId()), Constants.UploadType.PEIS.getValue(), state, "");
     }
 
 }

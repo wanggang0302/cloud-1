@@ -233,6 +233,11 @@ public class TcPerCheckinfo {
     private String filePath;
 
     /**
+     * 报告单压缩包文件大小（字节B）
+     */
+    private Long fileSize;
+
+    /**
      * 总检时间(显示在微信报告单上)
      */
     private Date totalTime;
@@ -647,6 +652,14 @@ public class TcPerCheckinfo {
 
     public void setTotalTime(Date totalTime) {
         this.totalTime = totalTime;
+    }
+
+    public Long getFileSize() {
+        return fileSize;
+    }
+
+    public void setFileSize(Long fileSize) {
+        this.fileSize = fileSize;
     }
 
 }

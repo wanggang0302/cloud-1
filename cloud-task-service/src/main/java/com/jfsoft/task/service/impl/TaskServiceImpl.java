@@ -46,17 +46,13 @@ public class TaskServiceImpl implements ITaskService {
     @Value("${task.procedure.rowlimit}")
     private String rowlimit;
 
-    //上传区域编码
-    @Value("${task.procedure.areacode}")
-    private String areacode;
-
     //上传失败次数限制（超过就不再上传此数据）
     @Value("${up.fail.count}")
     private String failCount;
 
     public void processData(String type) throws Exception {
         ITaskDataProcess taskDataProcess = dataProcessFactory.create(type);
-        taskDataProcess.uploadData(areacode, rowlimit);
+        taskDataProcess.uploadData(hospitalId, rowlimit);
     }
 
     //public String getPerCheckInfoProc(String areacode, String rowlimit) throws Exception {

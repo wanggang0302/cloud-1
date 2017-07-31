@@ -7,8 +7,6 @@
  */
 package com.jfsoft.cloud.mapper;
 
-
-
 import com.jfsoft.cloud.entity.TcLog;
 import org.apache.ibatis.annotations.Param;
 
@@ -16,23 +14,16 @@ import java.util.List;
 
 public interface TcLogMapper {
 
-
     int deleteByPrimaryKey(Integer id);
-
 
     int insert(TcLog record);
 
-
     int insertSelective(TcLog record);
-
-
 
     TcLog selectByPrimaryKey(Integer id);
 
-
-
     int updateByPrimaryKeySelective(TcLog record);
 
-
     int updateByPrimaryKey(TcLog record);
+
 }

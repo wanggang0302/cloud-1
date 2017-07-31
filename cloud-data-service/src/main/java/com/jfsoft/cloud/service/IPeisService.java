@@ -3,7 +3,7 @@ package com.jfsoft.cloud.service;
 import com.jfsoft.cloud.entity.TcPerCheckinfo;
 
 /**
- * Created by web on 2017/6/28.
+ * PEIS（体检）接口
  */
 public interface IPeisService {
 

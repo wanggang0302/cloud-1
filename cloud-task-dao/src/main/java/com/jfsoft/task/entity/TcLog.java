@@ -11,19 +11,14 @@ import java.util.Date;
 public class TcLog {
 
     /**
-     * 主键
+     * 自增主键
      */
-    private Integer id;
+    private String id;
 
     /**
-     * 上传机构代码
+     * 上传的数据的ID
      */
-    private String upMechCode;
-
-    /**
-     * 上传机构名称
-     */
-    private String upMechName;
+    private String upDataId;
 
     /**
      * 上传时间
@@ -31,37 +26,34 @@ public class TcLog {
     private Date upDate;
 
     /**
-     * 上传类型（LIS、PEIS、通用类消息）
+     * 上传类型(10:LIS,20:PEIS,30:通用类消息)
      */
     private String upType;
 
     /**
-     * 上传状态
+     * 上传状态(0:成功,1:失败)
      */
-    private Short upStatus;
+    private String upStatus;
 
-    public Integer getId() {
+    /**
+     * 上传状态详细描述
+     */
+    private String upStatusInfo;
+
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public String getUpMechCode() {
-        return upMechCode;
+    public String getUpDataId() {
+        return upDataId;
     }
 
-    public void setUpMechCode(String upMechCode) {
-        this.upMechCode = upMechCode;
-    }
-
-    public String getUpMechName() {
-        return upMechName;
-    }
-
-    public void setUpMechName(String upMechName) {
-        this.upMechName = upMechName;
+    public void setUpDataId(String upDataId) {
+        this.upDataId = upDataId;
     }
 
     public Date getUpDate() {
@@ -80,12 +72,20 @@ public class TcLog {
         this.upType = upType;
     }
 
-    public Short getUpStatus() {
+    public String getUpStatus() {
         return upStatus;
     }
 
-    public void setUpStatus(Short upStatus) {
+    public void setUpStatus(String upStatus) {
         this.upStatus = upStatus;
+    }
+
+    public String getUpStatusInfo() {
+        return upStatusInfo;
+    }
+
+    public void setUpStatusInfo(String upStatusInfo) {
+        this.upStatusInfo = upStatusInfo;
     }
 
 }

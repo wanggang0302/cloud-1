@@ -3,35 +3,35 @@
 <mapper namespace="com.jfsoft.task.mapper.TcLogMapper" >
 
     <resultMap id="BaseResultMap" type="com.jfsoft.task.entity.TcLog" >
-		<id column="ID" property="id" jdbcType="INTEGER" />
-		<result column="up_mech_code" property="upMechCode" jdbcType="VARCHAR" />
-		<result column="up_mech_name" property="upMechName" jdbcType="VARCHAR" />
+		<id column="ID" property="id" jdbcType="VARCHAR" />
+		<result column="up_data_id" property="upDataId" jdbcType="VARCHAR" />
 		<result column="up_date" property="upDate" jdbcType="TIMESTAMP" />
 		<result column="up_type" property="upType" jdbcType="CHAR" />
-		<result column="up_status" property="upStatus" jdbcType="BIT" />
+		<result column="up_status" property="upStatus" jdbcType="CHAR" />
+		<result column="up_status_info" property="upStatusInfo" jdbcType="VARCHAR" />
 	</resultMap>
 
 	<sql id="Base_Column_List" >
-		ID, up_mech_code, up_mech_name, up_date, up_type, up_status
+		ID, up_data_id, up_status_info, up_date, up_type, up_status
 	</sql>
 
 	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
 		select 
 		<include refid="Base_Column_List" />
 		from tc_log
-		where ID = #{id,jdbcType=INTEGER}
+		where ID = #{id,jdbcType=VARCHAR}
 	</select>
 
 	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
 		delete from tc_log
-		where ID = #{id,jdbcType=INTEGER}
+		where ID = #{id,jdbcType=VARCHAR}
 	</delete>
 
 	<insert id="insert" parameterType="com.jfsoft.task.entity.TcLog" >
-		insert into tc_log (ID, up_mech_code, up_mech_name, 
-			up_date, up_type, up_status)
-		values (#{id,jdbcType=INTEGER}, #{upMechCode,jdbcType=VARCHAR}, #{upMechName,jdbcType=VARCHAR}, 
-			#{upDate,jdbcType=TIMESTAMP}, #{upType,jdbcType=CHAR}, #{upStatus,jdbcType=BIT})
+		insert into tc_log (ID, up_data_id,
+			up_date, up_type, up_status, up_status_info)
+		values (#{id,jdbcType=VARCHAR}, #{upDataId,jdbcType=VARCHAR}, #{upDate,jdbcType=TIMESTAMP},
+			#{upType,jdbcType=CHAR}, #{upStatus,jdbcType=CHAR}, #{upStatusInfo,jdbcType=VARCHAR})
 	</insert>
 
 	<insert id="insertSelective" parameterType="com.jfsoft.task.entity.TcLog" >
@@ -40,11 +40,8 @@
 			<if test="id != null" >
 				ID,
 			</if>
-			<if test="upMechCode != null" >
-				up_mech_code,
-			</if>
-			<if test="upMechName != null" >
-				up_mech_name,
+			<if test="upDataId != null" >
+				up_data_id,
 			</if>
 			<if test="upDate != null" >
 				up_date,
@@ -55,16 +52,16 @@
 			<if test="upStatus != null" >
 				up_status,
 			</if>
+			<if test="upStatusInfo != null" >
+				up_status_info,
+			</if>
 		</trim>
 		<trim prefix="values (" suffix=")" suffixOverrides="," >
 			<if test="id != null" >
-				#{id,jdbcType=INTEGER},
+				#{id,jdbcType=VARCHAR},
 			</if>
-			<if test="upMechCode != null" >
-				#{upMechCode,jdbcType=VARCHAR},
-			</if>
-			<if test="upMechName != null" >
-				#{upMechName,jdbcType=VARCHAR},
+			<if test="upDataId != null" >
+				#{upDataId,jdbcType=VARCHAR},
 			</if>
 			<if test="upDate != null" >
 				#{upDate,jdbcType=TIMESTAMP},
@@ -73,7 +70,10 @@
 				#{upType,jdbcType=CHAR},
 			</if>
 			<if test="upStatus != null" >
-				#{upStatus,jdbcType=BIT},
+				#{upStatus,jdbcType=CHAR},
+			</if>
+			<if test="upStatusInfo != null" >
+				#{upStatusInfo,jdbcType=VARCHAR},
 			</if>
 		</trim>
 	</insert>
@@ -81,11 +81,8 @@
 	<update id="updateByPrimaryKeySelective" parameterType="com.jfsoft.task.entity.TcLog" >
 		update tc_log
 		<set >
-			<if test="upMechCode != null" >
-				up_mech_code = #{upMechCode,jdbcType=VARCHAR},
-			</if>
-			<if test="upMechName != null" >
-				up_mech_name = #{upMechName,jdbcType=VARCHAR},
+			<if test="upDataId != null" >
+				up_data_id = #{upDataId,jdbcType=VARCHAR},
 			</if>
 			<if test="upDate != null" >
 				up_date = #{upDate,jdbcType=TIMESTAMP},
@@ -94,32 +91,32 @@
 				up_type = #{upType,jdbcType=CHAR},
 			</if>
 			<if test="upStatus != null" >
-				up_status = #{upStatus,jdbcType=BIT},
+				up_status = #{upStatus,jdbcType=CHAR},
+			</if>
+			<if test="upStatusInfo != null" >
+				up_status_info = #{upStatusInfo,jdbcType=VARCHAR},
 			</if>
 		</set>
-		where ID = #{id,jdbcType=INTEGER}
+		where ID = #{id,jdbcType=VARCHAR}
 	</update>
 
 	<update id="updateByPrimaryKey" parameterType="com.jfsoft.task.entity.TcLog" >
 		update tc_log
-		set up_mech_code = #{upMechCode,jdbcType=VARCHAR},
-			up_mech_name = #{upMechName,jdbcType=VARCHAR},
+		set up_data_id = #{upDataId,jdbcType=VARCHAR},
 			up_date = #{upDate,jdbcType=TIMESTAMP},
 			up_type = #{upType,jdbcType=CHAR},
-			up_status = #{upStatus,jdbcType=BIT}
-		where ID = #{id,jdbcType=INTEGER}
+			up_status = #{upStatus,jdbcType=CHAR},
+			up_status_info = #{upStatusInfo,jdbcType=VARCHAR}
+		where ID = #{id,jdbcType=VARCHAR}
 	</update>
 
     <!-- 查询日志列表 -->
 	<select id="selectLogList" parameterType="java.util.Map" resultMap="BaseResultMap">
         SELECT
-            id,up_mech_name,up_date,up_type,up_status
+            id,up_data_id,up_date,up_type,up_status,up_status_info
         FROM
             tc_log
         <where>
-            <if test="upMechName!=null and upMechName!=''">
-                up_mech_name like CONCAT('%',#{upMechName},'%'),
-            </if>
             <if test="upType!=null and upType!=''">
                 up_type = #{upType},
             </if>
@@ -141,5 +138,20 @@
         ORDER BY
             up_date DESC
     </select>
+
+	<!-- 查询上传失败的日志记录 -->
+	<select id="selectUploadFailureLog" parameterType="java.util.Map" resultType="hashmap">
+		SELECT
+			tc.up_data_id as upDataId,COUNT(*) as count
+		FROM
+			tc_log tc
+		WHERE
+			tc.up_type=#{upType} and up_date>ISNULL(
+				(select top 1 tc1.up_date from tc_log tc1 where tc1.up_type=#{upType} and tc1.up_status='0' and tc1.up_data_id=tc.up_data_id order by tc1.up_date desc),
+				''
+				)
+		GROUP BY
+			up_data_id
+	</select>
 
 </mapper>
