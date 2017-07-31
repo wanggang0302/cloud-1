@@ -105,12 +105,12 @@ public class PeisDataProcessImpl extends TaskDataProcess {
             //获取文件名
             File file = new File(zipFileName);
             String picName = file.getName();
-
+            Long picSize = file.length();
             //上传
             MockMultipartFile pic = new MockMultipartFile("file", picName, "", fs);
-            Map<String, Object> map = cloudFeignClient.uploadPic(pic);
+            String result = cloudFeignClient.uploadPic(pic,picSize);
             //获取云端图片的路径
-            cloudFilePath = (String) map.get("filePath");
+            //cloudFilePath = (String) map.get("filePath");
 
         } catch (Exception e) {
             logger.error("PEIS image uploading error，err msg is {}。", e.getMessage());
