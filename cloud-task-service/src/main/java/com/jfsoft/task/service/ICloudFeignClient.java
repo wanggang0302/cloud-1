@@ -14,7 +14,7 @@ import java.util.Map;
  * wanggang
  * 2017-7-12 14:36:37
  */
-@FeignClient(name = "service-cloud",configuration = FeignMultipartSupportConfig.class)
+@FeignClient(name = "service-cloud-lis",configuration = FeignMultipartSupportConfig.class)
 public interface ICloudFeignClient {
 
     @PostMapping(value = "/cloud/peisSave")
@@ -24,6 +24,6 @@ public interface ICloudFeignClient {
     String lisSave(@RequestParam(value = "info") String info);
 
     @PostMapping(value = "/cloud/uploadPic", produces = {MediaType.APPLICATION_JSON_UTF8_VALUE}, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    Map<String,Object> uploadPic(@RequestPart MultipartFile file);
+    String uploadPic(@RequestPart MultipartFile file, @RequestParam(value = "picSize") Long picSize);
 
 }

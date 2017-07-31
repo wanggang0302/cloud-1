@@ -1,0 +1,6 @@
+com\jfsoft\cloud\service\impl\LisServiceImpl.class
+com\jfsoft\cloud\service\impl\LogServiceImpl.class
+com\jfsoft\cloud\service\impl\PeisServiceImpl.class
+com\jfsoft\cloud\service\IPeisService.class
+com\jfsoft\cloud\service\ILogService.class
+com\jfsoft\cloud\service\ILisService.class

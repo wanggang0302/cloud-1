@@ -1,5 +1,8 @@
 package com.jfsoft.task.mapper;
 
+import com.jfsoft.task.entity.TcLisPatientinfo;
+
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -15,6 +18,9 @@ public interface LisMapper {
      * 2017/6/30 13:20
      * @param params
      */
-    void getLisPatInfoList(Map<String, Object> params);
+    List<TcLisPatientinfo> getLisPatInfoList(Map<String, Object> params);
+
+
+    Integer insertTag(Integer patinfoid);
 
 }

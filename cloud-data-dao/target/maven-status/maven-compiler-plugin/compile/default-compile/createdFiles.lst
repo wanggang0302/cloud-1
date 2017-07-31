@@ -1,0 +1,6 @@
+com\jfsoft\cloud\mapper\TcPerCheckinfoMapper.class
+com\jfsoft\cloud\mapper\TcLisPatientinfoMapper.class
+com\jfsoft\cloud\entity\TcLog.class
+com\jfsoft\cloud\entity\TcPerCheckinfo.class
+com\jfsoft\cloud\mapper\TcLogMapper.class
+com\jfsoft\cloud\entity\TcLisPatientinfo.class

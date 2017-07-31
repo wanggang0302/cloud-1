@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="cloud-lis-api:war">
-    <output-path>$PROJECT_DIR$/cloud-lis-api/target</output-path>
-    <root id="archive" name="cloud-lis-api.war">
-      <element id="artifact" artifact-name="cloud-lis-api:war exploded" />
-    </root>
-  </artifact>
-</component>
