@@ -2,28 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48582612-7a80-4203-8e52-d15c6625908b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cloud-data-api/target/classes/application.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cloud-data-dao/target/classes/com/jfsoft/cloud/mapper/TcLisPatientinfoMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cloud-data-dao/target/classes/com/jfsoft/cloud/mapper/TcLogMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cloud-data-dao/target/classes/com/jfsoft/cloud/mapper/TcPerCheckinfoMapper.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-component-utils/src/main/java/com/jfsoft/utils/Constants.java" afterPath="$PROJECT_DIR$/cloud-component-utils/src/main/java/com/jfsoft/utils/Constants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-data-api/src/main/java/com/jfsoft/cloud/CloudController.java" afterPath="$PROJECT_DIR$/cloud-data-api/src/main/java/com/jfsoft/cloud/CloudController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-data-dao/src/main/java/com/jfsoft/cloud/mapper/TcLogMapper.java" afterPath="$PROJECT_DIR$/cloud-data-dao/src/main/java/com/jfsoft/cloud/mapper/TcLogMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-data-dao/src/main/java/com/jfsoft/cloud/mapper/TcPerCheckinfoMapper.java" afterPath="$PROJECT_DIR$/cloud-data-dao/src/main/java/com/jfsoft/cloud/mapper/TcPerCheckinfoMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-data-service/src/main/java/com/jfsoft/cloud/service/IPeisService.java" afterPath="$PROJECT_DIR$/cloud-data-service/src/main/java/com/jfsoft/cloud/service/IPeisService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-data-service/src/main/java/com/jfsoft/cloud/service/impl/PeisServiceImpl.java" afterPath="$PROJECT_DIR$/cloud-data-service/src/main/java/com/jfsoft/cloud/service/impl/PeisServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-api/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/cloud-task-api/src/main/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-api/target/classes/application.properties" afterPath="$PROJECT_DIR$/cloud-task-api/target/classes/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-dao/src/main/java/com/jfsoft/task/entity/TcLog.java" afterPath="$PROJECT_DIR$/cloud-task-dao/src/main/java/com/jfsoft/task/entity/TcLog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-dao/src/main/java/com/jfsoft/task/entity/TcPerCheckinfo.java" afterPath="$PROJECT_DIR$/cloud-task-dao/src/main/java/com/jfsoft/task/entity/TcPerCheckinfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-dao/src/main/java/com/jfsoft/task/mapper/TcLogMapper.java" afterPath="$PROJECT_DIR$/cloud-task-dao/src/main/java/com/jfsoft/task/mapper/TcLogMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-dao/src/main/java/com/jfsoft/task/mapper/TcLogMapper.xml" afterPath="$PROJECT_DIR$/cloud-task-dao/src/main/java/com/jfsoft/task/mapper/TcLogMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-dao/target/classes/com/jfsoft/task/mapper/TcLogMapper.xml" afterPath="$PROJECT_DIR$/cloud-task-dao/target/classes/com/jfsoft/task/mapper/TcLogMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-service/src/main/java/com/jfsoft/log/service/ITcLogService.java" afterPath="$PROJECT_DIR$/cloud-task-service/src/main/java/com/jfsoft/log/service/ITcLogService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-service/src/main/java/com/jfsoft/log/service/impl/TcLogServiceImpl.java" afterPath="$PROJECT_DIR$/cloud-task-service/src/main/java/com/jfsoft/log/service/impl/TcLogServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-service/src/main/java/com/jfsoft/task/service/impl/TaskServiceImpl.java" afterPath="$PROJECT_DIR$/cloud-task-service/src/main/java/com/jfsoft/task/service/impl/TaskServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-service/src/main/java/com/jfsoft/task/service/process/ITaskDataProcess.java" afterPath="$PROJECT_DIR$/cloud-task-service/src/main/java/com/jfsoft/task/service/process/ITaskDataProcess.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-service/src/main/java/com/jfsoft/task/service/process/impl/LisDataProcessImpl.java" afterPath="$PROJECT_DIR$/cloud-task-service/src/main/java/com/jfsoft/task/service/process/impl/LisDataProcessImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-service/src/main/java/com/jfsoft/task/service/process/impl/PeisDataProcessImpl.java" afterPath="$PROJECT_DIR$/cloud-task-service/src/main/java/com/jfsoft/task/service/process/impl/PeisDataProcessImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-service/src/main/java/com/jfsoft/task/service/process/impl/TaskDataProcess.java" afterPath="$PROJECT_DIR$/cloud-task-service/src/main/java/com/jfsoft/task/service/process/impl/TaskDataProcess.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/cloud-commonservice/target/" />
@@ -113,14 +96,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TcLogMapper.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TcLogMapper.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cloud-task-dao/src/main/java/com/jfsoft/task/mapper/TcLogMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="144" column="12" lean-forward="false" selection-start-line="144" selection-start-column="12" selection-end-line="144" selection-end-column="47" />
+            <state relative-caret-position="250">
+              <caret line="134" column="23" lean-forward="false" selection-start-line="134" selection-start-column="23" selection-end-line="134" selection-end-column="23" />
               <folding>
                 <marker date="1501495777191" expanded="true" signature="4875:5195" ph="SELECT tc.up... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.properties" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cloud-task-api/target/maven-archiver/pom.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -133,26 +126,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cloud-component-utils/src/main/java/com/jfsoft/utils/Constants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cloud-component-utils/src/main/java/com/jfsoft/utils/FileUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="23" lean-forward="false" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -220,9 +193,9 @@
       <find>upMechName</find>
       <find>BIT</find>
       <find>upType</find>
-      <find>selectUploadFailureLog</find>
       <find>task.procedure.areacode</find>
       <find>hospitalCode</find>
+      <find>selectUploadFailureLog</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -326,11 +299,29 @@
       <expand>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="cloud-component" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="cloud-data-api Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
         </path>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="cloud-component" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="cloud-data-api Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="cloud-data-dao" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="cloud-data-dao" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="cloud-data-service" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="cloud-data-service" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
         </path>
         <path>
@@ -487,6 +478,11 @@
             <path>
               <item name="cloud" type="b2602c69:ProjectViewProjectNode" />
               <item name="cloud" type="462c0819:PsiDirectoryNode" />
+              <item name="cloud-data-dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cloud" type="462c0819:PsiDirectoryNode" />
               <item name="cloud-task-api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -551,6 +547,19 @@
               <item name="jfsoft" type="462c0819:PsiDirectoryNode" />
               <item name="peis" type="462c0819:PsiDirectoryNode" />
               <item name="task" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cloud" type="462c0819:PsiDirectoryNode" />
+              <item name="cloud-task-api" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cloud" type="462c0819:PsiDirectoryNode" />
+              <item name="cloud-task-api" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="maven-archiver" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cloud" type="b2602c69:ProjectViewProjectNode" />
@@ -1391,7 +1400,7 @@
       <workItem from="1501201828324" duration="2197000" />
       <workItem from="1501208939748" duration="11526000" />
       <workItem from="1501461369688" duration="25497000" />
-      <workItem from="1501494942082" duration="841000" />
+      <workItem from="1501494942082" duration="1198000" />
     </task>
     <task id="LOCAL-00001" summary="添加定时任务模块">
       <created>1498705079645</created>
@@ -1491,11 +1500,18 @@
       <option name="project" value="LOCAL" />
       <updated>1501150122781</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="修改peis验证图片方法：&#10;1.前置机上传图片，采用zip，上传成功后，删除前置机的zip&#10;2.云平台保存zip，并进行大小（精确到字节：B）校验&#10;3.云平台推送模板消息到微信端，同时推送报告单数据以及报告单图片到微信平台保存&#10;4.微信平台保存图片zip，并进行解压，解压之后删除zip">
+      <created>1501495940050</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1501495940050</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="315757000" />
+    <option name="totallyTimeSpent" value="316114000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1515,14 +1531,15 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39732143" sideWeight="0.50586355" order="13" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2457356" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36160713" sideWeight="0.5074627" order="13" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2457356" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36160713" sideWeight="0.49253732" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26972282" sideWeight="0.4935065" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26972282" sideWeight="0.4935065" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18496802" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1531,6 +1548,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26918977" sideWeight="0.5064935" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39732143" sideWeight="0.49413645" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1538,11 +1556,9 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39732143" sideWeight="0.49413645" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38839287" sideWeight="0.4978678" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" x="-88" y="544" width="1736" height="856" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36160713" sideWeight="0.4946695" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.119936034" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26785713" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1567,7 +1583,8 @@
     <MESSAGE value="去掉发送微信消息的方法" />
     <MESSAGE value="修改" />
     <MESSAGE value="修改pom依赖" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改pom依赖" />
+    <MESSAGE value="修改peis验证图片方法：&#10;1.前置机上传图片，采用zip，上传成功后，删除前置机的zip&#10;2.云平台保存zip，并进行大小（精确到字节：B）校验&#10;3.云平台推送模板消息到微信端，同时推送报告单数据以及报告单图片到微信平台保存&#10;4.微信平台保存图片zip，并进行解压，解压之后删除zip" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改peis验证图片方法：&#10;1.前置机上传图片，采用zip，上传成功后，删除前置机的zip&#10;2.云平台保存zip，并进行大小（精确到字节：B）校验&#10;3.云平台推送模板消息到微信端，同时推送报告单数据以及报告单图片到微信平台保存&#10;4.微信平台保存图片zip，并进行解压，解压之后删除zip" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1663,27 +1680,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cloud-commonservice-eureka/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cloud-commonservice-eureka/src/main/java/com/jfsoft/ServletInitializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cloud-commonservice-eureka/src/main/java/com/jfsoft/EurekaserverApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cloud-commonservice/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-446">
@@ -1743,6 +1739,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
           <caret line="34" column="18" lean-forward="false" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1819,6 +1816,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1826,6 +1824,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="5" column="3" lean-forward="false" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1833,6 +1832,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1847,6 +1847,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1501139734573" expanded="true" signature="2849:2945" ph="select from tc_log" />
+            <marker date="1501139734573" expanded="true" signature="3029:3083" ph="delete from " />
+            <marker date="1501139734573" expanded="true" signature="3169:3434" ph="insert into tc_log... " />
+            <marker date="1501139734573" expanded="true" signature="5304:5613" ph="update tc_lo... " />
+            <marker date="1501139734573" expanded="true" signature="5814:6316" ph="update tc_lo... " />
+            <marker date="1501139734573" expanded="true" signature="6412:6683" ph="update tc_lo... " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1854,6 +1862,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1876,6 +1885,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="38" column="55" lean-forward="false" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1883,6 +1893,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
           <caret line="42" column="27" lean-forward="false" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
+          <folding>
+            <element signature="e#578#579#0" expanded="true" />
+            <element signature="e#614#615#0" expanded="true" />
+            <element signature="e#642#643#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1905,6 +1920,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
           <caret line="232" column="27" lean-forward="false" selection-start-line="232" selection-start-column="19" selection-end-line="232" selection-end-column="27" />
+          <folding>
+            <element signature="e#11390#11391#0" expanded="false" />
+            <element signature="e#11421#11422#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1943,6 +1962,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
           <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2051,13 +2071,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cloud-data-api/target/maven-archiver/pom.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cloud-task-dao/src/main/java/com/jfsoft/task/mapper/TcLogMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="144" column="12" lean-forward="false" selection-start-line="144" selection-start-column="12" selection-end-line="144" selection-end-column="47" />
+        <state relative-caret-position="250">
+          <caret line="134" column="23" lean-forward="false" selection-start-line="134" selection-start-column="23" selection-end-line="134" selection-end-column="23" />
           <folding>
             <marker date="1501495777191" expanded="true" signature="4875:5195" ph="SELECT tc.up... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cloud-task-api/target/maven-archiver/pom.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cloud-data-dao/target/maven-archiver/pom.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
