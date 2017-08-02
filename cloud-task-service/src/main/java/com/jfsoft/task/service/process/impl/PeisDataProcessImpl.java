@@ -1,12 +1,14 @@
 package com.jfsoft.task.service.process.impl;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.jfsoft.task.entity.TcPerCheckinfo;
 import com.jfsoft.task.mapper.PeisMapper;
 import com.jfsoft.utils.Constants;
 import com.jfsoft.utils.FileUtil;
 import com.jfsoft.utils.ZipCompressor;
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.time.DateUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,8 @@ import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -112,7 +116,7 @@ public class PeisDataProcessImpl extends TaskDataProcess {
             //获取云端图片的路径
             String cloudFilePath = "";
             //获取文件大小(字节B)，云平台验证附件上传完整度
-            long fileSize = 0l;
+            long picSize = 0l;
 
             try {
 
@@ -135,13 +139,17 @@ public class PeisDataProcessImpl extends TaskDataProcess {
                 File file = new File(zipFileName);
                 String picName = file.getName();
                 //获取文件大小(字节B)，云平台验证附件上传完整度
-                fileSize = file.length();
+                picSize = file.length();
 
                 //上传
                 MockMultipartFile pic = new MockMultipartFile("file", picName, "", fs);
-                Map<String, Object> map = cloudFeignClient.uploadPic(pic);
+                String result = cloudFeignClient.uploadPic(pic, picSize);
+                logger.debug("Upload pic success!");
+
                 //获取云端图片的路径
-                cloudFilePath = (String) map.get("filePath");
+                JSONObject jsonObject = JSON.parseObject(result);
+                //获取云端图片的路径
+                cloudFilePath = jsonObject.getString("filePath");
 
             } catch (Exception e) {
                 logger.error("PEIS image uploading error，err msg is {}。", e.getMessage());
@@ -158,15 +166,23 @@ public class PeisDataProcessImpl extends TaskDataProcess {
 
                 //重新组装检验信息，更新filePath字段
                 tcPerCheckinfo.setFilePath(cloudFilePath);
-                tcPerCheckinfo.setFileSize(fileSize);
+                tcPerCheckinfo.setFileSize(picSize);
                 tcPerCheckinfo.setHospitalCode(hospitalCode);
+
+                //wanggang 2017年8月1日13:44:29
+                tcPerCheckinfo.setId(null);
 
                 String perCheckinfoJson = JSON.toJSONString(tcPerCheckinfo);
                 //上传数据到云平台
-                status = cloudFeignClient.peisSave(perCheckinfoJson);
+                String statusJson = cloudFeignClient.peisSave(perCheckinfoJson);
 
-                logger.info("PEIS data uploading success, status is " + status);
+                //获得数据上传状态
+                JSONObject statusJsonObject = JSONObject.parseObject(statusJson);
+                status = statusJsonObject.get(Constants.UPLOAD_STATUS_KEY).toString();
+
+                logger.info("PEIS data uploading status is " + status);
             } catch (Exception e) {
+                status = Constants.UploadStatus.FAILURE.getValue();
                 logger.error("PEIS data uploading error，err msg is {}。", e.getMessage());
                 e.printStackTrace();
             }
@@ -174,7 +190,7 @@ public class PeisDataProcessImpl extends TaskDataProcess {
             status = Constants.UploadStatus.FAILURE.getValue();
         }
 
-        postProcessAfterHandleData(testno, status);
+        postProcessAfterHandleData(testno, tcPerCheckinfo.getTotalTime(), status);
     }
 
     /**
@@ -183,7 +199,7 @@ public class PeisDataProcessImpl extends TaskDataProcess {
      * @param status 数据处理状态
      * @throws Exception
      */
-    private void postProcessAfterHandleData(String id, String status) throws Exception {
+    private void postProcessAfterHandleData(String id, Date totalTime, String status) throws Exception {
 
         long count = null!=uploadFailureLog?uploadFailureLog.get(id):0l;
         //如果上传失败，查询历史失败次数
@@ -191,6 +207,8 @@ public class PeisDataProcessImpl extends TaskDataProcess {
             //如果数据上传成功或者数据上传失败超过一定次数，需要调用存储过程，确保下次执行不再查询到此条记录
             Map<String, Object> params = new HashMap<String, Object>();
             params.put("id", id);
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.sss");
+            params.put("totalTime", null!=totalTime?sdf.format(totalTime):"");
             peisMapper.updatePerCheckinfoState(params);
         }
 

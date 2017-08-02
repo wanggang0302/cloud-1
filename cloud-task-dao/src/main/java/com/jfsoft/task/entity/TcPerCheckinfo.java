@@ -208,6 +208,11 @@ public class TcPerCheckinfo {
     private Integer statuscode;
 
     /**
+     * 是否撤销：0 是;
+     */
+    private String isRevoke;
+
+    /**
      * 提示信息(主要给分检科室看(比如体检人员是领导))
      */
     private String notice;
@@ -660,6 +665,14 @@ public class TcPerCheckinfo {
 
     public void setFileSize(Long fileSize) {
         this.fileSize = fileSize;
+    }
+
+    public String getIsRevoke() {
+        return isRevoke;
+    }
+
+    public void setIsRevoke(String isRevoke) {
+        this.isRevoke = isRevoke;
     }
 
 }

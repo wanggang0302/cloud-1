@@ -20,6 +20,9 @@ public class Constants {
     /** 文件类型 */
     public static final String FILE_TYPE_ZIP = ".zip";
 
+    /** 上传状态key */
+    public static final String UPLOAD_STATUS_KEY = "status";
+
     /**
      * 上传状态
      * 0 SUCCESS

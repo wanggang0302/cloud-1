@@ -34,6 +34,11 @@ public class LisDataProcessImpl extends TaskDataProcess {
     @Value("${spring.application.name}")
     private String hospital_code;
 
+    protected Map<String, Long> selectUploadLog() throws Exception {
+
+        return tcLogService.selectUploadFailureLog(Constants.UploadType.PEIS.getValue());
+    }
+
     protected void handleData() throws Exception {
 
         List<TcLisPatientinfo> lisPatientinfoList = getLisPatientinfoData();
@@ -63,6 +68,11 @@ public class LisDataProcessImpl extends TaskDataProcess {
     private void handleData(TcLisPatientinfo lisPatientinfo) throws Exception {
 
         Map<String, Object> map = new HashMap<String, Object>();
+
+        Integer patinfoid = null;
+
+        String state = "";
+
         try {
             //从LIS表中获取filepath
             String filePath = lisPatientinfo.getFilepath();
@@ -78,6 +88,8 @@ public class LisDataProcessImpl extends TaskDataProcess {
 
             //上传
             String result = cloudFeignClient.uploadPic(pic, picSize);
+            logger.debug("Lis upload pic success!");
+
             JSONObject jsonObject = JSON.parseObject(result);
             //获取云端图片的路径
             String cloudFilePath = jsonObject.getString("filePath");
@@ -88,18 +100,40 @@ public class LisDataProcessImpl extends TaskDataProcess {
             //调用lisSave接口，发送重新组装的消息
             String lisPatientinfoJson = JSON.toJSONString(lisPatientinfo);
             String data = cloudFeignClient.lisSave(lisPatientinfoJson);
+            logger.debug("Save lis info success!");
+
             JSONObject json = JSON.parseObject(data);
-            Integer patinfoid = json.getInteger("data");
-            String state = json.getString("status");
+            patinfoid = json.getInteger("data");
+            state = json.getString("status");
             //调用插入patinfoid存储过程
-            Integer i = lisMpper.insertTag(patinfoid);
             logger.info("LIS data, 数据上传状态为--------" + state);
-            saveUploadLog(Constants.UploadType.PEIS.getValue(), state);
+            //Integer i = lisMpper.insertTag(patinfoid);
+            //saveUploadLog(Constants.UploadType.PEIS.getValue(), state);
         } catch (Exception e) {
             logger.error("Upload LIS img fail, err msg is {}.", e.getMessage());
             e.printStackTrace();
         }
 
+        postProcessAfterHandleData(patinfoid, state);
+    }
+
+    /**
+     * 数据后处理
+     * @param id 数据唯一标识
+     * @param status 数据处理状态
+     * @throws Exception
+     */
+    private void postProcessAfterHandleData(Integer id, String status) throws Exception {
+
+        long count = null!=uploadFailureLog&&uploadFailureLog.containsKey(id)?uploadFailureLog.get(id):0l;
+        //如果上传失败，查询历史失败次数
+        if(Constants.UploadStatus.SUCCESS.equals(null!=status?status.toUpperCase():"") || (count>=100)) {
+            //如果数据上传成功或者数据上传失败超过一定次数，需要调用存储过程，确保下次执行不再查询到此条记录
+            lisMpper.insertTag(id);
+        }
+
+        //保存上传信息到日志表
+        saveUploadLog(id.toString(), Constants.UploadType.LIS.getValue(), status, "");
     }
 
 }

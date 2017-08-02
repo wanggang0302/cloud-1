@@ -14,7 +14,7 @@ import java.util.Map;
  * wanggang
  * 2017-7-12 14:36:37
  */
-@FeignClient(name = "service-cloud-lis",configuration = FeignMultipartSupportConfig.class)
+@FeignClient(name = "service-cloud",configuration = FeignMultipartSupportConfig.class)
 public interface ICloudFeignClient {
 
     @PostMapping(value = "/cloud/peisSave")
