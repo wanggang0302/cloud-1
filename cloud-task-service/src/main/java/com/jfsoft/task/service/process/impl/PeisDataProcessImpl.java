@@ -203,7 +203,7 @@ public class PeisDataProcessImpl extends TaskDataProcess {
 
         long count = null!=uploadFailureLog?uploadFailureLog.get(id):0l;
         //如果上传失败，查询历史失败次数
-        if(Constants.UploadStatus.SUCCESS.equals(status) || (count>=100)) {
+        if(Constants.UploadStatus.SUCCESS.getValue().equals(status) || (count>=100)) {
             //如果数据上传成功或者数据上传失败超过一定次数，需要调用存储过程，确保下次执行不再查询到此条记录
             Map<String, Object> params = new HashMap<String, Object>();
             params.put("id", id);

@@ -103,7 +103,7 @@ public class LisDataProcessImpl extends TaskDataProcess {
             logger.debug("Save lis info success!");
 
             JSONObject json = JSON.parseObject(data);
-            patinfoid = json.getInteger("data");
+            patinfoid = lisPatientinfo.getPatinfoid();
             state = json.getString("status");
             //调用插入patinfoid存储过程
             logger.info("LIS data, 数据上传状态为--------" + state);
@@ -127,11 +127,10 @@ public class LisDataProcessImpl extends TaskDataProcess {
 
         long count = null!=uploadFailureLog&&uploadFailureLog.containsKey(id)?uploadFailureLog.get(id):0l;
         //如果上传失败，查询历史失败次数
-        if(Constants.UploadStatus.SUCCESS.equals(null!=status?status.toUpperCase():"") || (count>=100)) {
+        if(Constants.UploadStatus.SUCCESS.getValue().equals(null!=status?status.toUpperCase():"") || (count>=100)) {
             //如果数据上传成功或者数据上传失败超过一定次数，需要调用存储过程，确保下次执行不再查询到此条记录
             lisMpper.insertTag(id);
         }
-
         //保存上传信息到日志表
         saveUploadLog(id.toString(), Constants.UploadType.LIS.getValue(), status, "");
     }
