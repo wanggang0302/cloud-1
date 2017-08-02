@@ -200,7 +200,10 @@ public class PeisDataProcessImpl extends TaskDataProcess {
      */
     private void postProcessAfterHandleData(String id, Date totalTime, String status) throws Exception {
 
-        long count = null!=uploadFailureLog?uploadFailureLog.get(id):0l;
+        long count = 0l;
+        if(null!=uploadFailureLog&&uploadFailureLog.size()>0&&null!=uploadFailureLog.get(id)) {
+            count = uploadFailureLog.get(id);
+        }
         //如果上传失败，查询历史失败次数
         if(Constants.UploadStatus.SUCCESS.getValue().equals(status) || (count>=100)) {
             //如果数据上传成功或者数据上传失败超过一定次数，需要调用存储过程，确保下次执行不再查询到此条记录
