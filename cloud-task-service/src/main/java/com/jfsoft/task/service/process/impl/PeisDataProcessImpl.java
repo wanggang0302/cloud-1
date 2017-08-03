@@ -209,7 +209,7 @@ public class PeisDataProcessImpl extends TaskDataProcess {
             //如果数据上传成功或者数据上传失败超过一定次数，需要调用存储过程，确保下次执行不再查询到此条记录
             Map<String, Object> params = new HashMap<String, Object>();
             params.put("id", id);
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.sss");
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
             params.put("totalTime", null!=totalTime?sdf.format(totalTime):"");
             peisMapper.updatePerCheckinfoState(params);
         }
