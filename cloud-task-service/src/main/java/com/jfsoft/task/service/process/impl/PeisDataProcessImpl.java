@@ -11,6 +11,7 @@ import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.stereotype.Service;
 
@@ -51,6 +52,13 @@ public class PeisDataProcessImpl extends TaskDataProcess {
 
     @Autowired
     private PeisMapper peisMapper;
+
+    @Value("${spring.application.name}")
+    private String hospital_code;
+
+    //上传类型
+    @Value("${up.type}")
+    private String upType;
 
     protected Map<String, Long> selectUploadLog() throws Exception {
 
@@ -142,7 +150,7 @@ public class PeisDataProcessImpl extends TaskDataProcess {
 
                 //上传
                 MockMultipartFile pic = new MockMultipartFile("file", picName, "", fs);
-                String result = cloudFeignClient.uploadPic(pic, picSize);
+                String result = cloudFeignClient.uploadPic(pic, picSize, hospital_code, upType);
                 logger.debug("Upload pic success!");
 
                 //获取云端图片的路径

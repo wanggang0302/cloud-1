@@ -31,8 +31,13 @@ public class LisDataProcessImpl extends TaskDataProcess {
     @Autowired
     private LisMapper lisMpper;
 
+    //医院编码
     @Value("${spring.application.name}")
     private String hospital_code;
+
+    //上传类型
+    @Value("${up.type}")
+    private String upType;
 
     protected Map<String, Long> selectUploadLog() throws Exception {
 
@@ -86,8 +91,8 @@ public class LisDataProcessImpl extends TaskDataProcess {
             Long picSize = file.length();
             MockMultipartFile pic = new MockMultipartFile("file", picName, "", fs);
 
-            //上传
-            String result = cloudFeignClient.uploadPic(pic, picSize);
+            //上传图片
+            String result = cloudFeignClient.uploadPic(pic, picSize, hospital_code, upType);
             logger.debug("Lis upload pic success!");
 
             JSONObject jsonObject = JSON.parseObject(result);

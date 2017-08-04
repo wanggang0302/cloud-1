@@ -24,6 +24,7 @@ public interface ICloudFeignClient {
     String lisSave(@RequestParam(value = "info") String info);
 
     @PostMapping(value = "/cloud/uploadPic", produces = {MediaType.APPLICATION_JSON_UTF8_VALUE}, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    String uploadPic(@RequestPart MultipartFile file, @RequestParam(value = "picSize") Long picSize);
+    String uploadPic(@RequestPart MultipartFile file, @RequestParam(value = "picSize") Long picSize,
+                     @RequestParam(value = "hospital_code") String hospital_code, @RequestParam(value = "upType") String upType);
 
 }
