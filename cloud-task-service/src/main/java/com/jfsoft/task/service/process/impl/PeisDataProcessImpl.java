@@ -182,6 +182,7 @@ public class PeisDataProcessImpl extends TaskDataProcess {
                 String perCheckinfoJson = JSON.toJSONString(tcPerCheckinfo);
                 //上传数据到云平台
                 String statusJson = cloudFeignClient.peisSave(perCheckinfoJson);
+                logger.debug("statusJson is {}.", statusJson);
 
                 //获得数据上传状态
                 JSONObject statusJsonObject = JSONObject.parseObject(statusJson);
