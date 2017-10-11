@@ -1,11 +1,8 @@
 package com.jfsoft.peis.task;
 
-import com.jfsoft.utils.Constants;
 import com.jfsoft.log.service.ITcLogService;
-import com.jfsoft.task.entity.TcLog;
-import com.jfsoft.task.service.ITaskService;
 import com.jfsoft.task.service.ICloudFeignClient;
-import org.apache.commons.lang.StringUtils;
+import com.jfsoft.task.service.ITaskService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +10,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-
-import java.util.Date;
 
 /**
  * 定时任务
@@ -52,8 +47,11 @@ public class ScheduledTask {
     //@Value("${hospital.name}")
     //private String hospitalName;
 
-    @Scheduled(cron = "${task.time}")
-    public void execute() {
+    /**
+     * 上传检验结果
+     */
+    @Scheduled(cron = "${task.time.upResult}")
+    public void upResult() {
 
         long beginProcess = System.currentTimeMillis();
         logger.debug("Start processing msg , type is :" + type + ".");
@@ -96,5 +94,6 @@ public class ScheduledTask {
             e.printStackTrace();
         }
     }
+
 
 }

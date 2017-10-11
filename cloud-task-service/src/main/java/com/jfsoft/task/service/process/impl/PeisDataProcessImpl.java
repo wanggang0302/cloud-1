@@ -17,6 +17,8 @@ import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -88,13 +90,15 @@ public class PeisDataProcessImpl extends TaskDataProcess {
         return perCheckinfoList;
     }
 
-    public void handleData(TcPerCheckinfo tcPerCheckinfo) throws Exception {
+    public void handleData(TcPerCheckinfo tcPerCheckinfo) {
 
         //获取本地zip流，上传
         FileInputStream fs = null;
 
         //zip文件地址
         String zipFileName = "";
+
+        String errMsg = "update sucess";
 
         //数据上传到云平台的状态
         String status = "";
@@ -116,8 +120,12 @@ public class PeisDataProcessImpl extends TaskDataProcess {
                 //删除上传目录中的zip文件
                 FileUtil.deleteFilesByType(parentFilePath, Constants.FILE_TYPE_ZIP);
             } catch (Exception e) {
-                logger.error("Delete zip file from upload path fail, err msg is : " + e.getMessage());
-                e.printStackTrace();
+                StringWriter sw = new StringWriter();
+                PrintWriter pw = new PrintWriter(sw);
+                e.printStackTrace(pw);
+                errMsg = sw.toString();
+                logger.error("Delete zip file from upload path fail, err msg is : " + errMsg);
+                //e.printStackTrace();
             }
 
             //获取云端图片的路径
@@ -159,10 +167,22 @@ public class PeisDataProcessImpl extends TaskDataProcess {
                 cloudFilePath = jsonObject.getString("filePath");
 
             } catch (Exception e) {
-                logger.error("PEIS image uploading error，err msg is {}。", e.getMessage());
-                e.printStackTrace();
+                StringWriter sw = new StringWriter();
+                PrintWriter pw = new PrintWriter(sw);
+                e.printStackTrace(pw);
+                errMsg = sw.toString();
+                logger.error("PEIS image uploading error，err msg is {}。", errMsg);
+                //e.printStackTrace();
             } finally {
-                if(null!=fs) fs.close();
+                if(null!=fs) {
+                    try{
+                        fs.close();
+                    }catch (Exception e){
+                        logger.error("IO close error is+"+ e.getMessage());
+                        e.printStackTrace();
+                    }
+
+                }
                 File zipFile = new File(zipFileName);
                 if(null!=zipFile) {
                     zipFile.delete();
@@ -191,14 +211,23 @@ public class PeisDataProcessImpl extends TaskDataProcess {
                 logger.info("PEIS data uploading status is " + status);
             } catch (Exception e) {
                 status = Constants.UploadStatus.FAILURE.getValue();
-                logger.error("PEIS data uploading error，err msg is {}。", e.getMessage());
-                e.printStackTrace();
+                StringWriter sw = new StringWriter();
+                PrintWriter pw = new PrintWriter(sw);
+                e.printStackTrace(pw);
+                errMsg = sw.toString();
+                logger.error("PEIS data uploading error，err msg is {}。", errMsg);
+                //e.printStackTrace();
             }
         } else {
             status = Constants.UploadStatus.FAILURE.getValue();
         }
+        try {
+            postProcessAfterHandleData(testno, tcPerCheckinfo.getTotalTime(), status, errMsg);
+        }catch (Exception e){
+            logger.error("for error is+"+ e.getMessage());
+            e.printStackTrace();
+        }
 
-        postProcessAfterHandleData(testno, tcPerCheckinfo.getTotalTime(), status);
     }
 
     /**
@@ -207,7 +236,7 @@ public class PeisDataProcessImpl extends TaskDataProcess {
      * @param status 数据处理状态
      * @throws Exception
      */
-    private void postProcessAfterHandleData(String id, Date totalTime, String status) throws Exception {
+    private void postProcessAfterHandleData(String id, Date totalTime, String status, String errMsg) throws Exception {
 
         long count = 0l;
         if(null!=uploadFailureLog&&uploadFailureLog.size()>0&&null!=uploadFailureLog.get(id)) {
@@ -225,6 +254,13 @@ public class PeisDataProcessImpl extends TaskDataProcess {
 
         //保存上传信息到日志表
         saveUploadLog(id, Constants.UploadType.PEIS.getValue(), status, "");
+    }
+
+    public static void main(String[] args) {
+
+        Date date = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+        System.out.println(sdf.format(date));
     }
 
 }

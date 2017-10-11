@@ -14,6 +14,8 @@ import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -70,13 +72,15 @@ public class LisDataProcessImpl extends TaskDataProcess {
      * @param lisPatientinfo
      * @throws Exception
      */
-    private void handleData(TcLisPatientinfo lisPatientinfo) throws Exception {
+    private void handleData(TcLisPatientinfo lisPatientinfo) {
 
         Map<String, Object> map = new HashMap<String, Object>();
 
         Integer patinfoid = null;
 
         String state = "";
+
+        String errMsg = "update sucess";
 
         try {
             //从LIS表中获取filepath
@@ -91,7 +95,7 @@ public class LisDataProcessImpl extends TaskDataProcess {
             Long picSize = file.length();
             MockMultipartFile pic = new MockMultipartFile("file", picName, "", fs);
 
-            //上传图片
+            //上传图片(picSize图片大小验证)
             String result = cloudFeignClient.uploadPic(pic, picSize, hospital_code, upType);
             logger.debug("Lis upload pic success!");
 
@@ -115,11 +119,20 @@ public class LisDataProcessImpl extends TaskDataProcess {
             //Integer i = lisMpper.insertTag(patinfoid);
             //saveUploadLog(Constants.UploadType.PEIS.getValue(), state);
         } catch (Exception e) {
-            logger.error("Upload LIS img fail, err msg is {}.", e.getMessage());
+            StringWriter sw = new StringWriter();
+            PrintWriter pw = new PrintWriter(sw);
+            e.printStackTrace(pw);
+            errMsg = sw.toString();
+            logger.error("Upload LIS img fail, err msg is {}.", errMsg);
+            //e.printStackTrace();
+        }
+        try {
+            postProcessAfterHandleData(patinfoid, state, errMsg);
+        }catch (Exception e){
+            logger.error("for error is+"+ e.getMessage());
             e.printStackTrace();
         }
 
-        postProcessAfterHandleData(patinfoid, state);
     }
 
     /**
@@ -128,13 +141,14 @@ public class LisDataProcessImpl extends TaskDataProcess {
      * @param status 数据处理状态
      * @throws Exception
      */
-    private void postProcessAfterHandleData(Integer id, String status) throws Exception {
+    private void postProcessAfterHandleData(Integer id, String status, String errMsg) throws Exception {
 
         long count = null!=uploadFailureLog&&uploadFailureLog.containsKey(id)?uploadFailureLog.get(id):0l;
         //如果上传失败，查询历史失败次数
         if(Constants.UploadStatus.SUCCESS.getValue().equals(null!=status?status.toUpperCase():"") || (count>=100)) {
             //如果数据上传成功或者数据上传失败超过一定次数，需要调用存储过程，确保下次执行不再查询到此条记录
-            lisMpper.insertTag(id);
+            int a = lisMpper.insertTag(id);
+            logger.debug("LIS callback, id" + id + "已插入wx_push,"+ a + "条数据更新");
         }
         //保存上传信息到日志表
         saveUploadLog(id.toString(), Constants.UploadType.LIS.getValue(), status, "");
