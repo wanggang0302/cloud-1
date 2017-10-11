@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jfsoft.cloud.mapper.RegPatientinfoMapper" >
+    <resultMap id="BaseResultMap" type="com.jfsoft.cloud.entity.RegPatientinfo" >
+        <result column="patinfo_id" property="patinfoId" jdbcType="INTEGER" />
+        <result column="org_code" property="orgCode" jdbcType="VARCHAR" />
+        <result column="area_code" property="areaCode" jdbcType="VARCHAR" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="sex" property="sex" jdbcType="CHAR" />
+        <result column="age" property="age" jdbcType="INTEGER" />
+        <result column="age_unit" property="ageUnit" jdbcType="VARCHAR" />
+        <result column="bill_doc" property="billDoc" jdbcType="VARCHAR" />
+        <result column="bill_dept" property="billDept" jdbcType="VARCHAR" />
+        <result column="fee_money" property="feeMoney" jdbcType="REAL" />
+        <result column="req_time" property="reqTime" jdbcType="TIMESTAMP" />
+        <result column="lczd" property="lczd" jdbcType="VARCHAR" />
+        <result column="group_code" property="groupCode" jdbcType="INTEGER" />
+        <result column="status_code" property="statusCode" jdbcType="INTEGER" />
+        <result column="deltag" property="deltag" jdbcType="INTEGER" />
+        <result column="group_code" jdbcType="INTEGER" property="groupCode" />
+        <result column="group_name" jdbcType="VARCHAR" property="groupName" />
+        <result column="bar_code" jdbcType="INTEGER" property="barCode" />
+        <result column="sample_memo" jdbcType="VARCHAR" property="sampleMemo" />
+        <result column="item_code" property="itemCode" jdbcType="INTEGER" />
+        <result column="item_name" property="itemName" jdbcType="VARCHAR" />
+        <result column="item_fee" property="itemFee" jdbcType="FLOAT" />
+    </resultMap>
+    <parameterMap id="paramsMap" type="hashmap">
+        <parameter property="patinfo_id" mode="IN" javaType="java.lang.Integer" jdbcType="INTEGER" />
+        <parameter property="org_code" mode="IN" javaType="java.lang.String" jdbcType="VARCHAR" />
+        <parameter property="area_code" mode="IN" javaType="java.lang.String" jdbcType="VARCHAR" />
+        <parameter property="name" mode="IN" javaType="java.lang.String" jdbcType="VARCHAR" />
+        <parameter property="sex" mode="IN" javaType="java.lang.String" jdbcType="VARCHAR" />
+        <parameter property="age" mode="IN" javaType="java.lang.Integer" jdbcType="INTEGER" />
+        <parameter property="age_unit" mode="IN" javaType="java.lang.Integer" jdbcType="INTEGER" />
+        <parameter property="bill_doc" mode="IN" javaType="java.lang.String" jdbcType="VARCHAR" />
+        <parameter property="bill_dept" mode="IN" javaType="java.lang.String" jdbcType="VARCHAR" />
+        <parameter property="req_time" mode="IN" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+        <parameter property="lczd" mode="IN" javaType="java.lang.String" jdbcType="VARCHAR" />
+        <parameter property="group_name" mode="IN" javaType="java.lang.String" jdbcType="VARCHAR" />
+        <parameter property="bar_code" mode="IN" javaType="java.lang.Integer" jdbcType="INTEGER" />
+        <parameter property="sample_memo" mode="IN" javaType="java.lang.String" jdbcType="VARCHAR" />
+        <parameter property="item_code" mode="IN" javaType="java.lang.Integer" jdbcType="INTEGER" />
+        <parameter property="item_name" mode="IN" javaType="java.lang.String" jdbcType="VARCHAR" />
+        <parameter property="item_fee" mode="IN" javaType="java.lang.Float" jdbcType="FLOAT" />
+    </parameterMap>
+    <!--<select id="getRegInfo" resultMap="BaseResultMap" parameterType="java.lang.Integer" >-->
+        <!--SELECT reg.*, item.group_code,item.group_name,item.bar_code,item.sample_memo,temp.item_code,temp.item_name,temp.item_fee-->
+        <!--FROM chn_registration reg-->
+        <!--LEFT JOIN chn_itemgroup item ON reg.patinfo_id  = item.patinfo_id-->
+        <!--LEFT JOIN chn_itemtemp temp ON item.group_code = temp.group_code AND item.patinfo_id = temp.patinfo_id-->
+        <!--WHERE reg.area_code = #{areaCode} AND reg.org_code = #{orgCode}-->
+    <!--</select>-->
+
+    <!-- 调用SqlServer存储过程，插入注册信息 -->
+    <select id="insertRegInfo" parameterType="com.jfsoft.task.entity.RegPatientinfo" statementType="CALLABLE" resultType="java.lang.Integer">
+        {call RPT_PER_CHECKINFO(#{patinfo_id}, #{org_code}, #{area_code}, #{name}, #{sex}, #{age_unit}, #{bill_doc}, #{bill_dept},
+        #{req_time}), #{lczd}, #{group_name}, #{bar_code}, #{sample_memo}, #{item_code}, #{item_name}, #{item_fee}, #{status_code}}
+    </select>
+</mapper>
+

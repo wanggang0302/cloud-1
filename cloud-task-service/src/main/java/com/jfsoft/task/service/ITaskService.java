@@ -1,7 +1,5 @@
 package com.jfsoft.task.service;
 
-import java.awt.*;
-
 /**
  * 定时任务业务接口
  * wanggang

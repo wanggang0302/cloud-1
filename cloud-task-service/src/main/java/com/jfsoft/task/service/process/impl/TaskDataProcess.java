@@ -4,7 +4,6 @@ import com.jfsoft.log.service.ITcLogService;
 import com.jfsoft.task.entity.TcLog;
 import com.jfsoft.task.service.ICloudFeignClient;
 import com.jfsoft.task.service.process.ITaskDataProcess;
-import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,13 +54,18 @@ public abstract class TaskDataProcess implements ITaskDataProcess {
         //
     }
 
+//    public void saveRegDate() throws Exception {
+//        saveRegDate();
+//    }
+
     //查询上传日志
     protected abstract Map<String, Long> selectUploadLog() throws Exception;
 
     //处理数据
     protected abstract void handleData() throws Exception;
 
-    //
+    //保存数据
+//    protected abstract void saveRegDate() throws Exception;
 
     protected void saveUploadLog(String dataId, String type, String status, String statusInfo) throws Exception {
 

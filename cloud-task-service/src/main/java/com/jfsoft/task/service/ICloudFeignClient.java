@@ -2,12 +2,11 @@ package com.jfsoft.task.service;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
-
-import java.util.Map;
 
 /**
  * 上传到云平台
@@ -26,5 +25,8 @@ public interface ICloudFeignClient {
     @PostMapping(value = "/cloud/uploadPic", produces = {MediaType.APPLICATION_JSON_UTF8_VALUE}, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     String uploadPic(@RequestPart MultipartFile file, @RequestParam(value = "picSize") Long picSize,
                      @RequestParam(value = "hospital_code") String hospital_code, @RequestParam(value = "upType") String upType);
+
+    @GetMapping(value = "/cloud/pullReg")
+    String pullReg(@RequestParam(value="hospitalCode") String hospitalCode);
 
 }

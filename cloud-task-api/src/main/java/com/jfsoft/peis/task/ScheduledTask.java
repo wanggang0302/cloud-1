@@ -3,6 +3,7 @@ package com.jfsoft.peis.task;
 import com.jfsoft.log.service.ITcLogService;
 import com.jfsoft.task.service.ICloudFeignClient;
 import com.jfsoft.task.service.ITaskService;
+import com.jfsoft.task.service.downloader.ISaveDate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,9 @@ public class ScheduledTask {
 
     @Autowired
     private ICloudFeignClient cloudFeignClient;
+
+    @Autowired
+    private ISaveDate saveDate;
 
     //每次上传条数
     @Value("${task.procedure.rowlimit}")
@@ -85,7 +89,7 @@ public class ScheduledTask {
             //tcLog.setUpMechCode(hospitalCode);
             //tcLog.setUpMechName(hospitalName);
             ////保存日志
-            //tcLogService.save(tcLog);
+            //tcLogService.downloader(tcLog);
             //logger.debug("Type is : " + type + ", log is saved!");
 
             long endProcess = System.currentTimeMillis();
@@ -95,5 +99,21 @@ public class ScheduledTask {
         }
     }
 
+    /**
+     * 保存已登记信息
+     */
+    @Scheduled(cron = "${task.time.downloader}")
+    public void taskSaveInfo() {
+        try {
+            long beginProcess = System.currentTimeMillis();
 
+            String info = cloudFeignClient.pullReg(hospitalCode);
+
+            saveDate.saveRegInfo(info);
+
+            long endProcess = System.currentTimeMillis();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

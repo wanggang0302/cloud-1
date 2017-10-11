@@ -154,4 +154,13 @@ public class LisDataProcessImpl extends TaskDataProcess {
         saveUploadLog(id.toString(), Constants.UploadType.LIS.getValue(), status, "");
     }
 
+    /**
+     * 保存已登记人员信息
+     *
+     * @throws Exception
+     */
+//    @Override
+//    public void saveRegDate() throws Exception {
+//
+//    }
 }

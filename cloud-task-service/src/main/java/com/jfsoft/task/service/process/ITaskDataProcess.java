@@ -16,4 +16,10 @@ public interface ITaskDataProcess {
      */
     public void uploadData(String hospitalId, String rowlimit) throws Exception;
 
+    /**
+     * 保存已登记人员信息
+     * @throws Exception
+     */
+//    public void saveRegDate() throws Exception;
+
 }
