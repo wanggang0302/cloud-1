@@ -2,46 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48582612-7a80-4203-8e52-d15c6625908b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/smartfox_info.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cloud-task-api/src/main/java/com/jfsoft/domain/controller/WxMsgController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cloud-task-api/src/main/resources/static/jquery-1.11.3.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cloud-task-api/src/main/resources/static/vue.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cloud-component-swagger/target/cloud-component-swagger-1.0-SNAPSHOT.jar.original" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cloud-component-swagger/target/maven-archiver/pom.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cloud-component-swagger/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cloud-component-swagger/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/cloud_task_api_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/cloud_task_api_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-commonservice-eureka/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/cloud-commonservice-eureka/src/main/resources/application.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-commonservice-eureka/target/classes/application.properties" afterPath="$PROJECT_DIR$/cloud-commonservice-eureka/target/classes/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-api/cloud-task-api.iml" afterPath="$PROJECT_DIR$/cloud-task-api/cloud-task-api.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-api/pom.xml" afterPath="$PROJECT_DIR$/cloud-task-api/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-api/src/main/java/com/jfsoft/log/controller/LogController.java" afterPath="$PROJECT_DIR$/cloud-task-api/src/main/java/com/jfsoft/log/controller/LogController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-api/src/main/java/com/jfsoft/peis/task/ScheduledTask.java" afterPath="$PROJECT_DIR$/cloud-task-api/src/main/java/com/jfsoft/peis/task/ScheduledTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-api/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/cloud-task-api/src/main/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-api/src/main/resources/templates/logList.html" afterPath="$PROJECT_DIR$/cloud-task-api/src/main/resources/templates/logList.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-api/target/classes/application.properties" afterPath="$PROJECT_DIR$/cloud-task-api/target/classes/application.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-api/target/classes/templates/logList.html" afterPath="$PROJECT_DIR$/cloud-task-api/target/classes/templates/logList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-dao/cloud-task-dao.iml" afterPath="$PROJECT_DIR$/cloud-task-dao/cloud-task-dao.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-dao/src/main/java/com/jfsoft/task/entity/RegPatientinfo.java" afterPath="$PROJECT_DIR$/cloud-task-dao/src/main/java/com/jfsoft/task/entity/RegPatientinfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-dao/src/main/java/com/jfsoft/task/entity/TcLisPatientinfo.java" afterPath="$PROJECT_DIR$/cloud-task-dao/src/main/java/com/jfsoft/task/entity/TcLisPatientinfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-dao/src/main/java/com/jfsoft/task/mapper/LisMapper.xml" afterPath="$PROJECT_DIR$/cloud-task-dao/src/main/java/com/jfsoft/task/mapper/LisMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-dao/src/main/java/com/jfsoft/task/mapper/RegPatientinfoMapper.java" afterPath="$PROJECT_DIR$/cloud-task-dao/src/main/java/com/jfsoft/task/mapper/RegPatientinfoMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-dao/src/main/java/com/jfsoft/task/mapper/RegPatientinfoMapper.xml" afterPath="$PROJECT_DIR$/cloud-task-dao/src/main/java/com/jfsoft/task/mapper/RegPatientinfoMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-dao/src/main/java/com/jfsoft/task/mapper/TcLogMapper.java" afterPath="$PROJECT_DIR$/cloud-task-dao/src/main/java/com/jfsoft/task/mapper/TcLogMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-dao/src/main/java/com/jfsoft/task/mapper/TcLogMapper.xml" afterPath="$PROJECT_DIR$/cloud-task-dao/src/main/java/com/jfsoft/task/mapper/TcLogMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-dao/target/classes/com/jfsoft/task/mapper/LisMapper.xml" afterPath="$PROJECT_DIR$/cloud-task-dao/target/classes/com/jfsoft/task/mapper/LisMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-dao/target/classes/com/jfsoft/task/mapper/TcLogMapper.xml" afterPath="$PROJECT_DIR$/cloud-task-dao/target/classes/com/jfsoft/task/mapper/TcLogMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-service/cloud-task-service.iml" afterPath="$PROJECT_DIR$/cloud-task-service/cloud-task-service.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-service/src/main/java/com/jfsoft/log/service/ITcLogService.java" afterPath="$PROJECT_DIR$/cloud-task-service/src/main/java/com/jfsoft/log/service/ITcLogService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-service/src/main/java/com/jfsoft/log/service/impl/TcLogServiceImpl.java" afterPath="$PROJECT_DIR$/cloud-task-service/src/main/java/com/jfsoft/log/service/impl/TcLogServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-service/src/main/java/com/jfsoft/task/service/ICloudFeignClient.java" afterPath="$PROJECT_DIR$/cloud-task-service/src/main/java/com/jfsoft/task/service/ICloudFeignClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-service/src/main/java/com/jfsoft/task/service/IWxFeignClient.java" afterPath="$PROJECT_DIR$/cloud-task-service/src/main/java/com/jfsoft/task/service/IWxFeignClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-service/src/main/java/com/jfsoft/task/service/downloader/ISaveDate.java" afterPath="$PROJECT_DIR$/cloud-task-service/src/main/java/com/jfsoft/task/service/downloader/ISaveDate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task-service/src/main/java/com/jfsoft/task/service/downloader/impl/SaveDataImpl.java" afterPath="$PROJECT_DIR$/cloud-task-service/src/main/java/com/jfsoft/task/service/downloader/impl/SaveDataImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task/cloud-task.iml" afterPath="$PROJECT_DIR$/cloud-task/cloud-task.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud-task/pom.xml" afterPath="$PROJECT_DIR$/cloud-task/pom.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/cloud-commonservice/target/" />
@@ -1248,7 +1214,7 @@
       <workItem from="1508807155176" duration="20779000" />
       <workItem from="1508892887604" duration="9162000" />
       <workItem from="1509421506695" duration="8166000" />
-      <workItem from="1509499052751" duration="65000" />
+      <workItem from="1509499052751" duration="124000" />
     </task>
     <task id="LOCAL-00001" summary="添加定时任务模块">
       <created>1498705079645</created>
@@ -1390,11 +1356,18 @@
       <option name="project" value="LOCAL" />
       <updated>1507692973127</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="更新若干bug">
+      <created>1509499175180</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1509499175180</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="546319000" />
+    <option name="totallyTimeSpent" value="546378000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1754,6 +1727,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2688">
           <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1906,6 +1880,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1913,6 +1888,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="26" column="41" lean-forward="false" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1953,6 +1929,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1960,6 +1937,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
