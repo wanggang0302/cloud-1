@@ -16,6 +16,10 @@
           <element id="archive" name="cloud-task-dao-1.0-SNAPSHOT.jar">
             <element id="module-output" name="cloud-task-dao" />
           </element>
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-tomcat:1.5.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-core:8.5.15" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-el:8.5.15" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-websocket:8.5.15" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-thymeleaf:1.5.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf-spring4:2.1.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf:2.1.5.RELEASE" />
@@ -28,6 +32,10 @@
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot:1.5.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context:4.3.9.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-autoconfigure:1.5.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-logging:1.5.4.RELEASE" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.1.11" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:1.1.11" />
+          <element id="library" level="project" name="Maven: org.slf4j:log4j-over-slf4j:1.7.25" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:4.3.9.RELEASE" />
           <element id="library" level="project" name="Maven: org.yaml:snakeyaml:1.17" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-web:1.5.4.RELEASE" />

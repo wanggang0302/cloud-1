@@ -1,9 +1,12 @@
 package com.jfsoft.peis.task;
 
+import com.alibaba.fastjson.JSON;
 import com.jfsoft.log.service.ITcLogService;
+import com.jfsoft.task.entity.RegPatientinfo;
 import com.jfsoft.task.service.ICloudFeignClient;
 import com.jfsoft.task.service.ITaskService;
 import com.jfsoft.task.service.downloader.ISaveDate;
+import com.jfsoft.utils.Constants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +14,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 定时任务
@@ -62,36 +68,6 @@ public class ScheduledTask {
 
         try {
             taskService.processData(type);
-            //TcLog tcLog = new TcLog();
-            //tcLog.setUpDate(new Date());
-            //
-            ////上传状态
-            //String status = "";
-
-            //if(type.equalsIgnoreCase(Constants.UploadType.PEIS.getValue())) {
-            //    logger.info("peis服务启动");
-            //    status = taskService.getPerCheckInfoProc("001", rowlimit);
-            //    tcLog.setUpType(Constants.UploadType.PEIS.getValue());
-            //} else if(type.equalsIgnoreCase(Constants.UploadType.PEIS.getValue())) {
-            //    logger.info("lis服务启动");
-            //    status = taskService.getLisPatientInfoProc("001",rowlimit);
-            //    tcLog.setUpType(Constants.UploadType.LIS.getValue());
-            //} else {
-            //    logger.error("没有与类型：" + type + " 相匹配的消息处理机制！");
-            //}
-
-            //logger.info("type is : " + type + ", 数据上传状态为--------" + status);
-            //tcLog.setUpStatus(
-            //        Short.parseShort(
-            //                !StringUtils.isBlank(status)?status:"0"));
-            //
-            ////医院编码和名称
-            //tcLog.setUpMechCode(hospitalCode);
-            //tcLog.setUpMechName(hospitalName);
-            ////保存日志
-            //tcLogService.downloader(tcLog);
-            //logger.debug("Type is : " + type + ", log is saved!");
-
             long endProcess = System.currentTimeMillis();
             logger.debug("End processing msg , type is :" + type + ", time used " + (endProcess-beginProcess) + " ms.");
         } catch (Exception e) {
@@ -107,13 +83,33 @@ public class ScheduledTask {
         try {
             long beginProcess = System.currentTimeMillis();
 
-            String info = cloudFeignClient.pullReg(hospitalCode);
+            if(type.equalsIgnoreCase(Constants.UploadType.LIS.toString())) {
 
-            saveDate.saveRegInfo(info);
+                String info = cloudFeignClient.pullReg(hospitalCode);
 
+                saveDate.saveRegInfo(info);
+            }
             long endProcess = System.currentTimeMillis();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+//
+//    /**
+//     * 更新标本状态
+//     */
+//    @Scheduled(cron = "${task.time.updateState}")
+//    public void taskupdateState() {
+//        try {
+//
+//            if(type.equalsIgnoreCase(Constants.UploadType.LIS.toString())) {
+//                List<RegPatientinfo> list =  saveDate.updateState();
+//                List<Integer> ids = new ArrayList<>();
+//                String idStr = JSON.toJSONString(ids);
+//                String info = cloudFeignClient.pullReg(idStr);
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
 }

@@ -20,16 +20,93 @@
         </tr>
         </thead>
         <tbody>
-            <tr th:each="log : ${tcLogList}">
-                <!--<td th:text="${log.upMechName}"></td>-->
-                <td th:text="${log.upDataId}"></td>
-                <td th:text="${#dates.format(log.upDate, 'yyyy-MM-dd hh:mm:ss')}"></td>
-                <td th:text="${log.upType}"></td>
-                <td th:text="${log.upStatus}"></td>
-            </tr>
+            <!--<tr th:each="log : ${tcLogList}">-->
+                <!--&lt;!&ndash;<td th:text="${log.upMechName}"></td>&ndash;&gt;-->
+                <!--<td th:text="${log.upDataId}"></td>-->
+                <!--<td th:text="${#dates.format(log.upDate, 'yyyy-MM-dd hh:mm:ss')}"></td>-->
+                <!--<td th:text ="${log.upType}"></td>-->
+                <!--<td th:if="${log.upStatus=='1'}">-->
+                    <!--<span style="color: red;">上传失败</span>-->
+                <!--</td>-->
+                <!--<td th:if="${log.upStatus=='0'}">-->
+                    <!--<span style="color: green;">上传成功</span>-->
+                <!--</td>-->
+            <!--</tr>-->
         </tbody>
     </table>
 </div>
+<script src="/task/vue.js"></script>
+<script src="/task/jquery-1.11.3.js"></script>
+<script>
 
+    var log = new Vue({
+        el: '#log',
+        data: {
+            logList: '',
+            page:{
+                pageIndex:1,
+                pageSize:13,
+                upDateBegin: '',
+                upDateEnd: '',
+                upStatus: '',
+                upId: ''
+            },
+            count: '',
+        },
+        created:function () {
+            var _self = this;
+            $.getJSON('/task/logs', _self.page, function (data) {
+                console.log(data)
+                _self.logList = data.logList;
+            })
+        },
+        beforeUpdate:function () {
+
+            this.$nextTick(function () {
+
+
+            })
+
+        },
+        methods: {
+        }
+    })
+
+
+    layui.use(['layer', 'form', 'layedit', 'laydate', 'laypage'], function() {
+        var layer = layui.layer
+            , form = layui.form
+            , layedit = layui.layedit
+            , laydate = layui.laydate
+            , laypage = layui.laypage
+
+        laypage.render({
+            elem: 'demo0'
+            ,count: 100
+            ,theme: '#32a2e2'
+            ,jump: function(obj,first){
+                // console.log(obj.curr);
+                if(!first) {
+                    console.log(obj.curr); //当前页
+                    console.log(item.count); //总数
+//                    $.ajax({
+//                        url: '/notice/getNoticeList',
+//                        type: 'get',
+//                        dataType: 'json',
+//                        data: {
+//                            'pageIndex': obj.curr,
+//                            'pageSize': item.page.pageSize,
+//                        },success: function (data) {
+//                            item.noticeList = data.data;
+//                        },error: function () {
+//
+//                        }
+//                    });
+                }
+            }
+        });
+
+    });
+</script>
 </body>
 </html>

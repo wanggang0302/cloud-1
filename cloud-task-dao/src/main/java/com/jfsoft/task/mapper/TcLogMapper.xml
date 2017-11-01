@@ -135,9 +135,38 @@
                 </when>
             </choose>
         </where>
-        ORDER BY
-            up_date DESC
+        ORDER BY up_date DESC
+		LIMIT #{pageIndex}, #{pageSize}
     </select>
+
+	<!-- 查询日志列表 -->
+	<select id="selectLogListCount" parameterType="java.util.Map" resultType="java.lang.Integer">
+		SELECT
+		COUNT(*)
+		FROM
+		tc_log
+		<where>
+			<if test="upType!=null and upType!=''">
+				up_type = #{upType},
+			</if>
+			<if test="upStatus!=null and upStatus!=''" >
+				up_status = #{upStatus},
+			</if>
+			<choose>
+				<when test="null!=upDateBegin and ''!=upDateBegin and null!=upDateEnd and ''!=upDateEnd">
+					AND up_date between DATE_FORMAT(#{upDateBegin},'%Y-%m-%d %H:%i:%S') and DATE_FORMAT(#{upDateEnd},'%Y-%m-%d %H:%i:%S')
+				</when>
+				<when test="null!=upDateBegin and ''!=upDateBegin and (null==upDateEnd || ''==upDateEnd)">
+					AND up_date>=DATE_FORMAT(#{upDateBegin},'%Y-%m-%d %H:%i:%S')
+				</when>
+				<when test="(null==upDateBegin || ''==upDateBegin) and null!=upDateEnd and ''!=upDateEnd">
+					AND up_date<![CDATA[<=]]>DATE_FORMAT(#{upDateEnd},'%Y-%m-%d %H:%i:%S')
+				</when>
+			</choose>
+		</where>
+		ORDER BY up_date DESC
+	</select>
+
 
 	<!-- 查询上传失败的日志记录 -->
 	<select id="selectUploadFailureLog" parameterType="java.util.Map" resultType="hashmap">

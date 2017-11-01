@@ -4,6 +4,7 @@
     <resultMap type="com.jfsoft.task.entity.TcLisPatientinfo" id="LisPatientinfoList">
         <id column="id" property="id" />
         <result column="patinfoid" property="patinfoid" />
+        <result column="orgCode" property="orgCode" />
         <result column="testdate" property="testdate" />
         <result column="name" property="name" />
         <result column="pycode" property="pycode" />

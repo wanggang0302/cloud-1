@@ -1,7 +1,6 @@
 package com.jfsoft.log.service.impl;
 
 import com.jfsoft.log.service.ITcLogService;
-import com.jfsoft.task.core.TargetDataSource;
 import com.jfsoft.task.entity.TcLog;
 import com.jfsoft.task.mapper.TcLogMapper;
 import org.apache.commons.lang.StringUtils;
@@ -48,8 +47,41 @@ public class TcLogServiceImpl implements ITcLogService {
     }
 
     //@TargetDataSource(name="mysql")
-    public List<TcLog>  findList(String upMechName, String upType, String upStatus,
-                                String upDateBegin, String upDateEnd) throws Exception {
+    public List<TcLog>  findList(Integer pageIndex, Integer pageSize , String upMechName, String upType, String upStatus,
+                                 String upDateBegin, String upDateEnd) throws Exception {
+
+        Map<String, Object> params = new HashMap<String, Object>();
+        if(!StringUtils.isBlank(upType)) {
+            params.put("upType", upType);
+        }
+        if(!StringUtils.isBlank(upStatus)) {
+            params.put("upStatus", upStatus);
+        }
+        if(!StringUtils.isBlank(upDateBegin)) {
+            params.put("upDateBegin", upDateBegin + " 00:00:00");
+        }
+        if(!StringUtils.isBlank(upDateEnd)) {
+            //between ... and ...（包含关系）
+            params.put("upDateEnd", upDateEnd + " 23:59:59");
+        }
+            params.put("pageIndex", (pageIndex - 1) * pageSize);
+            params.put("pageSize", pageSize);
+        return tcLogMapper.selectLogList(params);
+    }
+
+    /**
+     * 查询日志总条数
+     *
+     * @param upMechName
+     * @param upType
+     * @param upStatus
+     * @param upDateBegin
+     * @param upDateEnd
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public int findList(String upMechName, String upType, String upStatus, String upDateBegin, String upDateEnd) throws Exception {
 
         Map<String, Object> params = new HashMap<String, Object>();
         if(!StringUtils.isBlank(upType)) {
@@ -66,7 +98,7 @@ public class TcLogServiceImpl implements ITcLogService {
             params.put("upDateEnd", upDateEnd + " 23:59:59");
         }
 
-        return tcLogMapper.selectLogList(params);
+        return tcLogMapper.selectLogListCount(params);
     }
 
 }

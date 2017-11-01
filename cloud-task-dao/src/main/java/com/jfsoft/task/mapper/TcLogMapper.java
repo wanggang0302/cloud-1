@@ -39,6 +39,13 @@ public interface TcLogMapper {
     List<TcLog> selectLogList(Map<String, Object> params);
 
     /**
+     * 查询日志总条数
+     * @param params
+     * @return
+     */
+    int selectLogListCount(Map<String, Object> params);
+
+    /**
      * 查询上传失败的日志记录
      * wanggang
      * 2017-07-28 13:28:27

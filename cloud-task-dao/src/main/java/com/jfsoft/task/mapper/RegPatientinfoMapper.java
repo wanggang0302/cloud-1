@@ -3,6 +3,9 @@ package com.jfsoft.task.mapper;
 
 import com.jfsoft.task.entity.RegPatientinfo;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * @author ChenXc
  * @version V1.0
@@ -11,5 +14,12 @@ import com.jfsoft.task.entity.RegPatientinfo;
  */
 public interface RegPatientinfoMapper {
 
-    int insertRegInfo(RegPatientinfo regPatientinfo);
+    /**
+     * 调用存储过程插入ChnInteface
+     * @param regPatientinfo
+     * @return
+     */
+    Integer insertRegInfo(RegPatientinfo regPatientinfo);
+
+    List<RegPatientinfo> updateState();
 }

@@ -26,7 +26,10 @@ public interface ICloudFeignClient {
     String uploadPic(@RequestPart MultipartFile file, @RequestParam(value = "picSize") Long picSize,
                      @RequestParam(value = "hospital_code") String hospital_code, @RequestParam(value = "upType") String upType);
 
-    @GetMapping(value = "/cloud/pullReg")
+    @PostMapping(value = "/cloud/pullReg")
     String pullReg(@RequestParam(value="hospitalCode") String hospitalCode);
+
+    @PostMapping(value = "/cloud/updateState")
+    String updateState(@RequestParam(value="patinfoIdList") String patinfoIdList);
 
 }

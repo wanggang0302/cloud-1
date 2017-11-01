@@ -1,5 +1,6 @@
 package com.jfsoft.task.entity;
 
+import java.math.BigInteger;
 import java.util.Date;
 
 /**
@@ -84,7 +85,7 @@ public class RegPatientinfo {
     /**
      * 条码
      */
-    private Integer barCode;
+    private BigInteger barCode;
 
     /**
      * 样本备注
@@ -102,6 +103,15 @@ public class RegPatientinfo {
      */
     private Float itemFee;
 
+    private Integer deltag;
+
+    public Integer getDeltag() {
+        return deltag;
+    }
+
+    public void setDeltag(Integer deltag) {
+        this.deltag = deltag;
+    }
 
     public Integer getItemCode() {
         return itemCode;
@@ -135,11 +145,11 @@ public class RegPatientinfo {
         this.groupName = groupName;
     }
 
-    public Integer getBarCode() {
+    public BigInteger getBarCode() {
         return barCode;
     }
 
-    public void setBarCode(Integer barCode) {
+    public void setBarCode(BigInteger barCode) {
         this.barCode = barCode;
     }
 

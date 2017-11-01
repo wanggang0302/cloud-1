@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.jfsoft.cloud.mapper.RegPatientinfoMapper" >
-    <resultMap id="BaseResultMap" type="com.jfsoft.cloud.entity.RegPatientinfo" >
-        <result column="patinfo_id" property="patinfoId" jdbcType="INTEGER" />
+<mapper namespace="com.jfsoft.task.mapper.RegPatientinfoMapper" >
+    <resultMap id="BaseResultMap" type="com.jfsoft.task.entity.RegPatientinfo" >
+        <result column="pid" property="patinfoId" jdbcType="INTEGER" />
         <result column="org_code" property="orgCode" jdbcType="VARCHAR" />
         <result column="area_code" property="areaCode" jdbcType="VARCHAR" />
         <result column="name" property="name" jdbcType="VARCHAR" />
@@ -26,23 +26,23 @@
         <result column="item_fee" property="itemFee" jdbcType="FLOAT" />
     </resultMap>
     <parameterMap id="paramsMap" type="hashmap">
-        <parameter property="patinfo_id" mode="IN" javaType="java.lang.Integer" jdbcType="INTEGER" />
-        <parameter property="org_code" mode="IN" javaType="java.lang.String" jdbcType="VARCHAR" />
-        <parameter property="area_code" mode="IN" javaType="java.lang.String" jdbcType="VARCHAR" />
+        <parameter property="patinfoId" mode="IN" javaType="java.lang.Integer" jdbcType="INTEGER" />
+        <parameter property="orgCode" mode="IN" javaType="java.lang.String" jdbcType="VARCHAR" />
+        <parameter property="areaCode" mode="IN" javaType="java.lang.String" jdbcType="VARCHAR" />
         <parameter property="name" mode="IN" javaType="java.lang.String" jdbcType="VARCHAR" />
         <parameter property="sex" mode="IN" javaType="java.lang.String" jdbcType="VARCHAR" />
         <parameter property="age" mode="IN" javaType="java.lang.Integer" jdbcType="INTEGER" />
         <parameter property="age_unit" mode="IN" javaType="java.lang.Integer" jdbcType="INTEGER" />
-        <parameter property="bill_doc" mode="IN" javaType="java.lang.String" jdbcType="VARCHAR" />
-        <parameter property="bill_dept" mode="IN" javaType="java.lang.String" jdbcType="VARCHAR" />
-        <parameter property="req_time" mode="IN" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+        <parameter property="billDoc" mode="IN" javaType="java.lang.String" jdbcType="VARCHAR" />
+        <parameter property="billDept" mode="IN" javaType="java.lang.String" jdbcType="VARCHAR" />
+        <parameter property="reqTime" mode="IN" javaType="java.util.Date" jdbcType="TIMESTAMP" />
         <parameter property="lczd" mode="IN" javaType="java.lang.String" jdbcType="VARCHAR" />
-        <parameter property="group_name" mode="IN" javaType="java.lang.String" jdbcType="VARCHAR" />
-        <parameter property="bar_code" mode="IN" javaType="java.lang.Integer" jdbcType="INTEGER" />
-        <parameter property="sample_memo" mode="IN" javaType="java.lang.String" jdbcType="VARCHAR" />
-        <parameter property="item_code" mode="IN" javaType="java.lang.Integer" jdbcType="INTEGER" />
-        <parameter property="item_name" mode="IN" javaType="java.lang.String" jdbcType="VARCHAR" />
-        <parameter property="item_fee" mode="IN" javaType="java.lang.Float" jdbcType="FLOAT" />
+        <parameter property="groupName" mode="IN" javaType="java.lang.String" jdbcType="VARCHAR" />
+        <parameter property="barCode" mode="IN" javaType="java.lang.Integer" jdbcType="INTEGER" />
+        <parameter property="sampleMemo" mode="IN" javaType="java.lang.String" jdbcType="VARCHAR" />
+        <parameter property="itemCode" mode="IN" javaType="java.lang.Integer" jdbcType="INTEGER" />
+        <parameter property="itemName" mode="IN" javaType="java.lang.String" jdbcType="VARCHAR" />
+        <parameter property="itemFee" mode="IN" javaType="java.lang.Float" jdbcType="FLOAT" />
     </parameterMap>
     <!--<select id="getRegInfo" resultMap="BaseResultMap" parameterType="java.lang.Integer" >-->
         <!--SELECT reg.*, item.group_code,item.group_name,item.bar_code,item.sample_memo,temp.item_code,temp.item_name,temp.item_fee-->
@@ -53,9 +53,16 @@
     <!--</select>-->
 
     <!-- 调用SqlServer存储过程，插入注册信息 -->
-    <select id="insertRegInfo" parameterType="com.jfsoft.task.entity.RegPatientinfo" statementType="CALLABLE" resultType="java.lang.Integer">
-        {call RPT_PER_CHECKINFO(#{patinfo_id}, #{org_code}, #{area_code}, #{name}, #{sex}, #{age_unit}, #{bill_doc}, #{bill_dept},
-        #{req_time}), #{lczd}, #{group_name}, #{bar_code}, #{sample_memo}, #{item_code}, #{item_name}, #{item_fee}, #{status_code}}
+    <select id="insertRegInfo" parameterMap="paramsMap" statementType="CALLABLE">
+        {call Syn_AreaRegInfo(#{patinfoId, mode=IN}, #{orgCode, mode=IN}, #{name, mode=IN}, #{sex, mode=IN},
+        #{age, mode=IN}, #{ageUnit, mode=IN}, #{billDoc, mode=IN}, #{billDept, mode=IN}, #{reqTime, mode=IN},
+        #{lczd, mode=IN}, #{itemCode, mode=IN}, #{itemName, mode=IN}, #{itemFee, mode=IN}, #{barCode, mode=IN},
+        #{sampleMemo, mode=IN}, #{statusCode, mode=IN})}
+    </select>
+
+    <!-- 调用SqlServer存储过程，插入注册信息 -->
+    <select id="updateState" statementType="CALLABLE" resultMap="BaseResultMap">
+        {call Syn_SampleState}
     </select>
 </mapper>
 

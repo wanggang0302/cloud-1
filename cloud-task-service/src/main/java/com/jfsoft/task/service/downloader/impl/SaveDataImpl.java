@@ -1,11 +1,14 @@
 package com.jfsoft.task.service.downloader.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.jfsoft.task.entity.RegPatientinfo;
 import com.jfsoft.task.mapper.RegPatientinfoMapper;
 import com.jfsoft.task.service.downloader.ISaveDate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @author ChenXc
@@ -27,11 +30,26 @@ public class SaveDataImpl implements ISaveDate {
      * @throws Exception
      */
     @Override
-    public int saveRegInfo(String regInfo) throws Exception {
+    public Integer saveRegInfo(String regInfo) throws Exception {
 
-        RegPatientinfo regPatientinfo = JSONObject.parseObject(regInfo, RegPatientinfo.class);
+        JSONObject jsonObject = JSON.parseObject(regInfo);
+        String regInfos = jsonObject.getString("regInfo");
+        List<RegPatientinfo> regPatientinfoList = JSON.parseArray(regInfos, RegPatientinfo.class);
+        Integer count = 0;
+        for (RegPatientinfo reg : regPatientinfoList) {
+            regPatientinfoMapper.insertRegInfo(reg);
+        }
+        return 1;
+    }
 
-
-        return regPatientinfoMapper.insertRegInfo(regPatientinfo);
+    /**
+     * 获取已接收标本的ID
+     *
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<RegPatientinfo> updateState() throws Exception {
+        return regPatientinfoMapper.updateState();
     }
 }

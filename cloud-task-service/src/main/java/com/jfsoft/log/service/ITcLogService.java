@@ -31,7 +31,20 @@ public interface ITcLogService {
      * @return
      * @throws Exception
      */
-    public List<TcLog> findList(String upMechName, String upType, String upStatus,
+    public List<TcLog> findList(Integer pageIndex, Integer pageSize , String upMechName, String upType, String upStatus,
+                                String upDateBegin, String upDateEnd) throws Exception;
+
+    /**
+     * 查询日志总条数
+     * @param upMechName
+     * @param upType
+     * @param upStatus
+     * @param upDateBegin
+     * @param upDateEnd
+     * @return
+     * @throws Exception
+     */
+    public int findList(String upMechName, String upType, String upStatus,
                                 String upDateBegin, String upDateEnd) throws Exception;
 
     /**

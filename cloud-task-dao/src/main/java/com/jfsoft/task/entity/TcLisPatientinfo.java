@@ -22,6 +22,11 @@ public class TcLisPatientinfo {
     private String hospitalCode;
 
     /**
+     * 机构代码
+     */
+    private String orgCode;
+
+    /**
      * 患者ID
      */
     private Integer patinfoid;
@@ -190,6 +195,15 @@ public class TcLisPatientinfo {
      * base64
      */
     private String pic;
+
+
+    public String getOrgCode() {
+        return orgCode;
+    }
+
+    public void setOrgCode(String orgCode) {
+        this.orgCode = orgCode;
+    }
 
     public Integer getId() {
         return id;

@@ -1,5 +1,9 @@
 package com.jfsoft.task.service.downloader;
 
+import com.jfsoft.task.entity.RegPatientinfo;
+
+import java.util.List;
+
 /**
  * @author ChenXc
  * @version V1.0
@@ -14,5 +18,12 @@ public interface ISaveDate {
      * @return
      * @throws Exception
      */
-    public int saveRegInfo(String regInfo) throws Exception;
+    public Integer saveRegInfo(String regInfo) throws Exception;
+
+    /**
+     * 获取已接收标本的ID
+     * @return
+     * @throws Exception
+     */
+    public List<RegPatientinfo> updateState() throws Exception;
 }

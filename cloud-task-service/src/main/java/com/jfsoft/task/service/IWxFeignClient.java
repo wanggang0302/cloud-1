@@ -25,4 +25,13 @@ public interface IWxFeignClient {
     @PostMapping(value = "/push", produces = {MediaType.APPLICATION_JSON_UTF8_VALUE}, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     String push(@RequestParam(value="info") String info, @RequestPart MultipartFile file);
 
+
+    /**
+     * 排队叫号接口
+     * 推送排队等待人数
+     * @param info
+     * @return
+     */
+    @PostMapping(value = "/wx/push2")
+    String push2(@RequestParam(value="info") String info) throws Exception;
 }
